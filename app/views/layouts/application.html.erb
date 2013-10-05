@@ -8,30 +8,18 @@
 </head>
 <body>
 
-<header class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="/">The Idea app</a>
-      <ul class="nav">
-        <li class="active"><a href="#">lorem</a></li>
-      </ul>
-      <p class="navbar-text pull-right">
-        <% if user_signed_in? %>
-          Logado como <strong><%= current_user.email %></strong>.
-          <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-        <% else %>
-          <%= link_to "Cadastrar", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-        <% end %>
-      </p>
-    </div>
-  </div>
-</header>
+<%= render "layouts/header" %>
+
 <div class="container">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %> 
   <%= yield %>
+  <footer>
+    <p class="pull-right"><a href="#">Voltar ao topo</a></p>
+    <p>&copy; 2013 Renan Gurgel</p>
+  </footer>
 </div>
+
 </body>
 </html>
