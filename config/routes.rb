@@ -1,5 +1,7 @@
 MinhaProva::Application.routes.draw do
   
+  resources :colleges
+
   resources :teachers
 
   root "home#index"

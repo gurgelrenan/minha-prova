@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008022037) do
+ActiveRecord::Schema.define(version: 20131008024240) do
+
+  create_table "colleges", force: true do |t|
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colleges_teachers", force: true do |t|
+    t.integer "college_id"
+    t.integer "teacher_id"
+  end
 
   create_table "teachers", force: true do |t|
     t.string   "name"
