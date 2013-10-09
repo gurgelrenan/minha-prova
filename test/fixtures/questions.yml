@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  type: 
+  ranking: 1
+  image: MyString
+  teacher_id: 
+  discipline_id: 
+
+two:
+  description: MyText
+  type: 
+  ranking: 1
+  image: MyString
+  teacher_id: 
+  discipline_id: 

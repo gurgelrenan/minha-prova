@@ -1,5 +1,7 @@
 MinhaProva::Application.routes.draw do
   
+  resources :questions
+
   resources :disciplines
 
   resources :cores
