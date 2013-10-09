@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @core.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @core.course %>
+</p>
+
+<%= link_to 'Edit', edit_core_path(@core) %> |
+<%= link_to 'Back', cores_path %>
