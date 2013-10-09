@@ -7,6 +7,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :image
       t.references :teacher, index: true
       t.references :discipline, index: true
+      t.references :test, index: true
 
       t.timestamps
     end

@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008035350) do
+ActiveRecord::Schema.define(version: 20131009012213) do
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -26,6 +25,15 @@ ActiveRecord::Schema.define(version: 20131008035350) do
     t.integer "teacher_id"
   end
 
+  create_table "cores", force: true do |t|
+    t.string   "name"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cores", ["course_id"], name: "index_cores_on_course_id", using: :btree
+
   create_table "courses", force: true do |t|
     t.string   "name"
     t.integer  "college_id"
@@ -35,14 +43,62 @@ ActiveRecord::Schema.define(version: 20131008035350) do
 
   add_index "courses", ["college_id"], name: "index_courses_on_college_id", using: :btree
 
-  create_table "teachers", force: true do |t|
+  create_table "disciplines", force: true do |t|
     t.string   "name"
-    t.integer  "user_id"
+    t.text     "description"
+    t.integer  "college_id"
+    t.integer  "teacher_id"
+    t.integer  "core_id"
+    t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "disciplines", ["college_id"], name: "index_disciplines_on_college_id", using: :btree
+  add_index "disciplines", ["core_id"], name: "index_disciplines_on_core_id", using: :btree
+  add_index "disciplines", ["course_id"], name: "index_disciplines_on_course_id", using: :btree
+  add_index "disciplines", ["teacher_id"], name: "index_disciplines_on_teacher_id", using: :btree
+
+  create_table "questions", force: true do |t|
+    t.text     "description"
+    t.string   "type"
+    t.integer  "ranking"
+    t.string   "image"
+    t.integer  "teacher_id"
+    t.integer  "discipline_id"
+    t.integer  "test_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree
+  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
+  add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
+
+  create_table "teachers", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "core_id"
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "teachers", ["core_id"], name: "index_teachers_on_core_id", using: :btree
+  add_index "teachers", ["course_id"], name: "index_teachers_on_course_id", using: :btree
   add_index "teachers", ["user_id"], name: "index_teachers_on_user_id", using: :btree
+
+  create_table "tests", force: true do |t|
+    t.string   "name"
+    t.string   "questions"
+    t.integer  "teacher_id"
+    t.integer  "discipline_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tests", ["discipline_id"], name: "index_tests_on_discipline_id", using: :btree
+  add_index "tests", ["teacher_id"], name: "index_tests_on_teacher_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

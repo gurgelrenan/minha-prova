@@ -3,6 +3,8 @@ class CreateTeachers < ActiveRecord::Migration
     create_table :teachers do |t|
       t.string :name
       t.references :user, index: true
+      t.references :core, index: true
+      t.references :course, index: true
 
       t.timestamps
     end
