@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: disciplines
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  college_id  :integer
+#  teacher_id  :integer
+#  core_id     :integer
+#  course_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
