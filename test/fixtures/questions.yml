@@ -2,16 +2,19 @@
 #
 # Table name: questions
 #
-#  id            :integer          not null, primary key
-#  description   :text
-#  type          :string(255)
-#  ranking       :integer
-#  image         :string(255)
-#  teacher_id    :integer
-#  discipline_id :integer
-#  test_id       :integer
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id                 :integer          not null, primary key
+#  description        :text
+#  type               :string(255)
+#  ranking            :integer
+#  teacher_id         :integer
+#  discipline_id      :integer
+#  test_id            :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131009012213) do
+ActiveRecord::Schema.define(version: 20131014025334) do
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -63,12 +64,15 @@ ActiveRecord::Schema.define(version: 20131009012213) do
     t.text     "description"
     t.string   "type"
     t.integer  "ranking"
-    t.string   "image"
     t.integer  "teacher_id"
     t.integer  "discipline_id"
     t.integer  "test_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree

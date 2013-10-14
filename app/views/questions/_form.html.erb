@@ -1,41 +1,10 @@
-<%= form_for(@question) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
-
-      <ul>
-      <% @question.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :ranking %><br>
-    <%= f.number_field :ranking %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
-  </div>
-  <div class="field">
-    <%= f.label :discipline %><br>
-    <%= f.text_field :discipline %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@question, :html => { :multipart => true })  do |f| %>
+    <%= f.input :description %>
+    <%= f.input :type, collection: [:objetiva, :subjetiva], prompt: "Selecione o tipo" %>
+    <%= f.input :ranking, collection: 1..5, prompt: "Escolha a dificuldade" %>
+    <%= f.input :image, as: :file %>
+    <%= f.association :teacher, prompt: "Escolha o professor" %>
+    <%= f.association :discipline, prompt: "Escolha a disciplina" %><br />
+  
+    <%= f.button :submit, class: "btn btn-primary", value: "Atualizar" %>
 <% end %>
