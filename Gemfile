@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'simple_form'
 gem 'paperclip'
+gem 'newrelic_rpm'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
