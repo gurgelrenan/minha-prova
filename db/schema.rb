@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131014025334) do
+ActiveRecord::Schema.define(version: 20131026192341) do
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20131014025334) do
 
   create_table "questions", force: true do |t|
     t.text     "description"
-    t.string   "type"
+    t.string   "type_question"
     t.integer  "ranking"
     t.integer  "teacher_id"
     t.integer  "discipline_id"

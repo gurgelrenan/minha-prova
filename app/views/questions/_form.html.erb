@@ -1,6 +1,6 @@
   <%= simple_form_for(@question, :html => { :multipart => true, class: "form-horizontal", role: "form" })  do |f| %>
       <%= f.input :description %>
-      <%= f.input :type, collection: [:objetiva, :subjetiva], prompt: "Selecione o tipo" %>
+      <%= f.input :type_question, collection: [:objetiva, :subjetiva], prompt: "Selecione o tipo" %>
       <%= f.input :ranking, collection: 1..5, prompt: "Escolha a dificuldade" %>
       <%= f.input :image, as: :file %>
       <%= f.association :teacher, prompt: "Escolha o professor" %>

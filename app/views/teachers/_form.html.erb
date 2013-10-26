@@ -1,20 +1,7 @@
 <%= simple_form_for(@teacher, html: { role: "form"  }) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
+  <%= f.input :name %>
+  <%= f.association :user, prompt: "Escolha um usuário" %>
+  <%= f.association :core, prompt: "Escolha um núcleo" %>
 
-  <div class="form-group">
-    <%= f.label :user %><br>
-    <%= f.text_field :user, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :core %><br>
-    <%= f.text_field :core, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.submit "Enviar", class: "btn btn-primary" %>
-  </div>
+  <%= f.button :submit, class: "btn btn-primary", value: "Cadastrar" %>
 <% end %>
