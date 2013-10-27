@@ -17,36 +17,26 @@ class TeachersController < ApplicationController
 
   def create
     @teacher = Teacher.new(teacher_params)
-
-    respond_to do |format|
-      if @teacher.save
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @teacher }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
+    if @teacher.save
+      flash[:success] = "Professor criado com sucesso!"
+      redirect_to @teacher
+    else
+      render "new"
     end
   end
 
   def update
-    respond_to do |format|
-      if @teacher.update(teacher_params)
-        format.html { redirect_to @teacher, notice: 'Teacher was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
+    if @teacher.update(teacher_params)
+      flash[:success] = "Professor atualizado com sucesso!"
+      redirect_to @teacher
+    else
+      render "edit"
     end
   end
 
   def destroy
     @teacher.destroy
-    respond_to do |format|
-      format.html { redirect_to teachers_url }
-      format.json { head :no_content }
-    end
+    redirect_to teachers_url
   end
 
   private
@@ -57,6 +47,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      params.require(:teacher).permit(:name, :user_id)
+      params.require(:teacher).permit(:name, :user_id, :core_id, :course_id)
     end
 end

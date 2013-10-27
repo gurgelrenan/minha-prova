@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @teacher.name %>
@@ -7,8 +5,18 @@
 
 <p>
   <strong>User:</strong>
-  <%= @teacher.user %>
+  <%= @teacher.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<p>
+  <strong>Núcleo:</strong>
+  <%= @teacher.core.name %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @teacher.course.name %>
+</p>
+
+<%= link_to 'Editar', edit_teacher_path(@teacher) %> |
+<%= link_to 'Voltar', teachers_path %>
