@@ -1,64 +1,42 @@
 class CollegesController < ApplicationController
   before_action :set_college, only: [:show, :edit, :update, :destroy]
 
-  # GET /colleges
-  # GET /colleges.json
   def index
     @colleges = College.all
   end
 
-  # GET /colleges/1
-  # GET /colleges/1.json
   def show
   end
 
-  # GET /colleges/new
   def new
     @college = College.new
   end
 
-  # GET /colleges/1/edit
   def edit
   end
 
-  # POST /colleges
-  # POST /colleges.json
   def create
     @college = College.new(college_params)
-
-    respond_to do |format|
-      if @college.save
-        format.html { redirect_to @college, notice: 'College was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @college }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @college.errors, status: :unprocessable_entity }
-      end
+    if @college.save
+      flash[:success] = "Universidade criada com sucesso"
+      redirect_to @college
+    else
+      render "new"
     end
   end
 
-  # PATCH/PUT /colleges/1
-  # PATCH/PUT /colleges/1.json
   def update
-    respond_to do |format|
-      if @college.update(college_params)
-        format.html { redirect_to @college, notice: 'College was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @college.errors, status: :unprocessable_entity }
-      end
+    if @college.update(college_params)
+      flash[:success] = "Universidade atualizada com sucesso!"
+      redirect_to @college
+    else
+      render "edit"
     end
   end
 
-  # DELETE /colleges/1
-  # DELETE /colleges/1.json
   def destroy
     @college.destroy
-    respond_to do |format|
-      format.html { redirect_to colleges_url }
-      format.json { head :no_content }
-    end
+    redirect_to colleges_url
   end
 
   private
