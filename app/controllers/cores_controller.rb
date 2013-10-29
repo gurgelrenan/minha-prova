@@ -1,64 +1,44 @@
+# encoding: utf-8
+
 class CoresController < ApplicationController
   before_action :set_core, only: [:show, :edit, :update, :destroy]
 
-  # GET /cores
-  # GET /cores.json
   def index
     @cores = Core.all
   end
 
-  # GET /cores/1
-  # GET /cores/1.json
   def show
   end
 
-  # GET /cores/new
   def new
     @core = Core.new
   end
 
-  # GET /cores/1/edit
   def edit
   end
 
-  # POST /cores
-  # POST /cores.json
   def create
     @core = Core.new(core_params)
-
-    respond_to do |format|
-      if @core.save
-        format.html { redirect_to @core, notice: 'Core was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @core }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @core.errors, status: :unprocessable_entity }
-      end
+    if @core.save
+      flash[:success] = "Núcleo criado com sucesso!"
+      redirect_to @core
+    else
+      render 'new'
     end
   end
 
-  # PATCH/PUT /cores/1
-  # PATCH/PUT /cores/1.json
   def update
-    respond_to do |format|
       if @core.update(core_params)
-        format.html { redirect_to @core, notice: 'Core was successfully updated.' }
-        format.json { head :no_content }
+        flash[:success] = "Núcleo atualizado com sucesso!"
+        redirect_to @core
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @core.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
-  # DELETE /cores/1
-  # DELETE /cores/1.json
   def destroy
     @core.destroy
-    respond_to do |format|
-      format.html { redirect_to cores_url }
-      format.json { head :no_content }
-    end
+    redirect_to cores_url
   end
 
   private

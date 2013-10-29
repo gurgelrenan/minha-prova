@@ -1,25 +1,5 @@
-<%= form_for(@core) do |f| %>
-  <% if @core.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@core.errors.count, "error") %> prohibited this core from being saved:</h2>
-
-      <ul>
-      <% @core.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :course %><br>
-    <%= f.text_field :course %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= simple_form_for(@core) do |f| %>
+    <%= f.input :name %>
+    <%= f.association :course %>
+    <%= f.button :submit, "Enviar" %>
 <% end %>

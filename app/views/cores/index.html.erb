@@ -1,13 +1,11 @@
-<h1>Listing cores</h1>
+<h1>Listando Núcleos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Course</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nome</th>
+      <th>Curso</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -15,10 +13,12 @@
     <% @cores.each do |core| %>
       <tr>
         <td><%= core.name %></td>
-        <td><%= core.course %></td>
-        <td><%= link_to 'Show', core %></td>
-        <td><%= link_to 'Edit', edit_core_path(core) %></td>
-        <td><%= link_to 'Destroy', core, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= core.course.name %></td>
+        <td nowrap>
+          <%= link_to "", core_path(core), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", edit_core_path(core), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", core_path(core), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover esse núcleo?", :class => "glyphicon glyphicon-trash" %>
+      </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Core', new_core_path %>
+<%= link_to 'Novo núcleo', new_core_path, class: "btn btn-primary" %>

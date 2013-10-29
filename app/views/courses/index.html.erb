@@ -1,13 +1,11 @@
-<h1>Listing courses</h1>
+<h1>Listando Cursos</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>College</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nome</th>
+      <th>Universidade</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -15,10 +13,12 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= course.college %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= course.college.name if course.college %></td>
+        <td nowrap>
+          <%= link_to "", course_path(course), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", edit_course_path(course), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", course_path(course), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover esse curso?", :class => "glyphicon glyphicon-trash" %>
+      </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'Novo Curso', new_course_path, class: "btn btn-primary" %>

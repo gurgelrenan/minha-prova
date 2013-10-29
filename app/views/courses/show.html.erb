@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @course.name %>
 </p>
 
 <p>
-  <strong>College:</strong>
-  <%= @course.college %>
+  <strong>Universidade:</strong>
+  <%= @course.college.name %>
 </p>
 
 
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Editar', edit_course_path(@course), class: "btn" %> |
+<%= link_to 'Voltar', courses_path, class: "btn" %>
