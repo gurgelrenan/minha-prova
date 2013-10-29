@@ -1,34 +1,32 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @discipline.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @discipline.description %>
 </p>
 
 <p>
-  <strong>College:</strong>
-  <%= @discipline.college %>
+  <strong>Universidade:</strong>
+  <%= @discipline.college.name %>
 </p>
 
 <p>
-  <strong>Teacher:</strong>
-  <%= @discipline.teacher %>
+  <strong>Professor:</strong>
+  <%= @discipline.teacher.name %>
 </p>
 
 <p>
-  <strong>Core:</strong>
-  <%= @discipline.core %>
+  <strong>Núcleo:</strong>
+  <%= @discipline.core.name %>
 </p>
 
 <p>
-  <strong>Course:</strong>
-  <%= @discipline.course %>
+  <strong>Curso:</strong>
+  <%= @discipline.course.name %>
 </p>
 
-<%= link_to 'Edit', edit_discipline_path(@discipline) %> |
-<%= link_to 'Back', disciplines_path %>
+<%= link_to 'Editar', edit_discipline_path(@discipline), class: "btn" %> |
+<%= link_to 'Voltar', disciplines_path, class: "btn" %>

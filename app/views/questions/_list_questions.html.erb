@@ -1,15 +1,13 @@
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Type</th>
+      <th>Descrição</th>
+      <th>Tipo</th>
       <th>Ranking</th>
-      <th>Image</th>
-      <th>Teacher</th>
-      <th>Discipline</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Imagem</th>
+      <th>Professor</th>
+      <th>Disciplina</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -20,11 +18,13 @@
         <td><%= question.type_question %></td>
         <td><%= question.ranking %></td>
         <td><%= question.image %></td>
-        <td><%= question.teacher %></td>
-        <td><%= question.discipline %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= question.teacher.name %></td>
+        <td><%= question.discipline.name %></td>
+        <td nowrap>
+          <%= link_to "", question_path(question), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", edit_question_path(question), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", question_path(question), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover essa questão?", :class => "glyphicon glyphicon-trash" %>
+      </td>
       </tr>
     <% end %>
   </tbody>

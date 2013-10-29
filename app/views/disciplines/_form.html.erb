@@ -1,41 +1,12 @@
-<%= form_for(@discipline) do |f| %>
-  <% if @discipline.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
+<%= simple_form_for(@discipline) do |f| %>
 
-      <ul>
-      <% @discipline.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.association :college %>
+  <%= f.association :teacher %>
+  <%= f.association :core %>
+  <%= f.association :course %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :college %><br>
-    <%= f.text_field :college %>
-  </div>
-  <div class="field">
-    <%= f.label :teacher %><br>
-    <%= f.text_field :teacher %>
-  </div>
-  <div class="field">
-    <%= f.label :core %><br>
-    <%= f.text_field :core %>
-  </div>
-  <div class="field">
-    <%= f.label :course %><br>
-    <%= f.text_field :course %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.button :submit, "Enviar" %>
+  
 <% end %>

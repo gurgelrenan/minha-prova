@@ -1,17 +1,15 @@
-<h1>Listing disciplines</h1>
+<h1>Listando disciplines</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>College</th>
-      <th>Teacher</th>
-      <th>Core</th>
-      <th>Course</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Universidade</th>
+      <th>Professor</th>
+      <th>Núcleo</th>
+      <th>Curso</th>
+      <th>Ações</th>
     </tr>
   </thead>
 
@@ -20,13 +18,15 @@
       <tr>
         <td><%= discipline.name %></td>
         <td><%= discipline.description %></td>
-        <td><%= discipline.college %></td>
-        <td><%= discipline.teacher %></td>
-        <td><%= discipline.core %></td>
-        <td><%= discipline.course %></td>
-        <td><%= link_to 'Show', discipline %></td>
-        <td><%= link_to 'Edit', edit_discipline_path(discipline) %></td>
-        <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= discipline.college.name %></td>
+        <td><%= discipline.teacher.name %></td>
+        <td><%= discipline.core.name %></td>
+        <td><%= discipline.course.name %></td>
+        <td nowrap>
+          <%= link_to "", discipline_path(discipline), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", edit_discipline_path(discipline), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", discipline_path(discipline), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover essa disciplina?", :class => "glyphicon glyphicon-trash" %>
+      </td>
       </tr>
     <% end %>
   </tbody>

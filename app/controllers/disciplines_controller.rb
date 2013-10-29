@@ -1,64 +1,42 @@
 class DisciplinesController < ApplicationController
   before_action :set_discipline, only: [:show, :edit, :update, :destroy]
 
-  # GET /disciplines
-  # GET /disciplines.json
   def index
     @disciplines = Discipline.all
   end
 
-  # GET /disciplines/1
-  # GET /disciplines/1.json
   def show
   end
 
-  # GET /disciplines/new
   def new
     @discipline = Discipline.new
   end
 
-  # GET /disciplines/1/edit
   def edit
   end
 
-  # POST /disciplines
-  # POST /disciplines.json
   def create
     @discipline = Discipline.new(discipline_params)
-
-    respond_to do |format|
       if @discipline.save
-        format.html { redirect_to @discipline, notice: 'Discipline was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @discipline }
+        flash[:success] = "Disciplina salva com sucesso!"
+        redirect_to @discipline
       else
-        format.html { render action: 'new' }
-        format.json { render json: @discipline.errors, status: :unprocessable_entity }
+        render "new"
       end
-    end
   end
 
-  # PATCH/PUT /disciplines/1
-  # PATCH/PUT /disciplines/1.json
   def update
-    respond_to do |format|
-      if @discipline.update(discipline_params)
-        format.html { redirect_to @discipline, notice: 'Discipline was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @discipline.errors, status: :unprocessable_entity }
-      end
+    if @discipline.update(discipline_params)
+      flash[:success] = "Disciplina atualizada com sucesso!"
+      redirect_to @discipline
+    else
+      render "edit"
     end
   end
 
-  # DELETE /disciplines/1
-  # DELETE /disciplines/1.json
   def destroy
     @discipline.destroy
-    respond_to do |format|
-      format.html { redirect_to disciplines_url }
-      format.json { head :no_content }
-    end
+    redirect_to disciplines_url
   end
 
   private
