@@ -1,0 +1,3 @@
+language: ruby
+# descomente esta linha se seu projeto precisa rodar algo além de `rake`:
+# script: bundle exec rspec spec
