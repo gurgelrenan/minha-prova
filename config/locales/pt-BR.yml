@@ -1,0 +1,19 @@
+pt-BR:
+  models:
+    college: "Universidade"
+    core: "Núcleo"
+    course: "Curso"
+    discipline: "Disciplina"
+    question: "Questão"
+    teacher: "Professor"
+    test: "Prova"
+    user: "Usuário"
+  controllers:
+  actions:
+    create: "Criação"
+    destroy: "Remoção"
+    edit: "Visualização da atualização"
+    index: "Listagem"
+    new: "Visualização da criação"
+    show: "Exibição"
+    update: "Atualização"

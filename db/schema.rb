@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027193100) do
+ActiveRecord::Schema.define(version: 20131108022819) do
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -78,6 +78,19 @@ ActiveRecord::Schema.define(version: 20131027193100) do
   add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree
   add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
   add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
+
+  create_table "rails_admin_histories", force: true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      limit: 2
+    t.integer  "year",       limit: 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "teachers", force: true do |t|
     t.string   "name"
