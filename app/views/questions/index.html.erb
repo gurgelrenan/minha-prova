@@ -1,9 +1,0 @@
-<h1>Questões</h1>
-
-<% if @questions.empty? %>
-  <h3>Ainda não temos questões cadastradas</h3>
-  <%= link_to "cadastrar questão", new_question_path, class: 'btn btn-large btn-primary' %>
-
-<% else %> 
-  <%= render "list_questions" %> 
-<% end %>

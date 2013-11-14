@@ -1,9 +1,10 @@
 MinhaProva::Application.routes.draw do
   
+  
+  
+  
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :tests
-
-  resources :questions
 
   resources :disciplines
 

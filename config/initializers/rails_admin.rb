@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on November 07, 2013 23:28
+# RailsAdmin config file. Generated on November 13, 2013 23:34
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -27,10 +27,10 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = ['College', 'Core', 'Course', 'Discipline', 'Question', 'Teacher', 'Test', 'User']
+  # config.excluded_models = ['College', 'Core', 'Course', 'Discipline', 'Teacher', 'Test', 'User']
 
   # Include specific models (exclude the others):
-  # config.included_models = ['College', 'Core', 'Course', 'Discipline', 'Question', 'Teacher', 'Test', 'User']
+  # config.included_models = ['College', 'Core', 'Course', 'Discipline', 'Teacher', 'Test', 'User']
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
@@ -203,7 +203,6 @@ RailsAdmin.config do |config|
   #     configure :teacher, :belongs_to_association 
   #     configure :core, :belongs_to_association 
   #     configure :course, :belongs_to_association 
-  #     configure :questions, :has_many_association 
   #     configure :tests, :has_many_association 
 
   #   # Found columns:
@@ -244,61 +243,6 @@ RailsAdmin.config do |config|
   # end
 
 
-  ###  Question  ###
-
-  # config.model 'Question' do
-
-  #   # You can copy this to a 'rails_admin do ... end' block inside your question.rb model definition
-
-  #   # Found associations:
-
-  #     configure :teacher, :belongs_to_association 
-  #     configure :discipline, :belongs_to_association 
-  #     configure :test, :belongs_to_association 
-
-  #   # Found columns:
-
-  #     configure :id, :integer 
-  #     configure :description, :text 
-  #     configure :type_question, :string 
-  #     configure :ranking, :integer 
-  #     configure :teacher_id, :integer         # Hidden 
-  #     configure :discipline_id, :integer         # Hidden 
-  #     configure :test_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
-  #     configure :image_file_name, :string         # Hidden 
-  #     configure :image_content_type, :string         # Hidden 
-  #     configure :image_file_size, :integer         # Hidden 
-  #     configure :image_updated_at, :datetime         # Hidden 
-  #     configure :image, :paperclip 
-
-  #   # Cross-section configuration:
-
-  #     # object_label_method :name     # Name of the method called for pretty printing an *instance* of ModelName
-  #     # label 'My model'              # Name of ModelName (smartly defaults to ActiveRecord's I18n API)
-  #     # label_plural 'My models'      # Same, plural
-  #     # weight 0                      # Navigation priority. Bigger is higher.
-  #     # parent OtherModel             # Set parent model for navigation. MyModel will be nested below. OtherModel will be on first position of the dropdown
-  #     # navigation_label              # Sets dropdown entry's name in navigation. Only for parents!
-
-  #   # Section specific configuration:
-
-  #     list do
-  #       # filters [:id, :name]  # Array of field names which filters should be shown by default in the table header
-  #       # items_per_page 100    # Override default_items_per_page
-  #       # sort_by :id           # Sort column (default is primary key)
-  #       # sort_reverse true     # Sort direction (default is true for primary key, last created first)
-  #     end
-  #     show do; end
-  #     edit do; end
-  #     export do; end
-  #     # also see the create, update, modal and nested sections, which override edit in specific cases (resp. when creating, updating, modifying from another model in a popup modal or modifying from another model nested form)
-  #     # you can override a cross-section field configuration in any section with the same syntax `configure :field_name do ... end`
-  #     # using `field` instead of `configure` will exclude all other fields and force the ordering
-  # end
-
-
   ###  Teacher  ###
 
   # config.model 'Teacher' do
@@ -312,7 +256,6 @@ RailsAdmin.config do |config|
   #     configure :course, :belongs_to_association 
   #     configure :colleges, :has_and_belongs_to_many_association 
   #     configure :disciplines, :has_many_association 
-  #     configure :questions, :has_many_association 
   #     configure :tests, :has_many_association 
 
   #   # Found columns:
