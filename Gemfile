@@ -10,6 +10,8 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'newrelic_rpm'
 gem 'rails_admin'
+gem 'survey', :git => 'git://github.com/runtimerevolution/survey.git'
+gem 'protected_attributes'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
