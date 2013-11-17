@@ -1,2 +1,10 @@
-<h1>Minha Prova</h1>
-<p>Crie sua prova de uma maneira fácil!</p>
+<h1>Questões no Sistema</h1>
+
+<% @questions.each do |question| %>
+	<h3><%= question.text %></h2>
+	<p>
+		<% question.options do |option| %>
+			<p><%= option.text %></p>
+		<% end %>
+	</p>
+<% end %>
