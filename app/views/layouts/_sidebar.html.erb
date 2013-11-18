@@ -1,87 +1,42 @@
 <aside class="sidebar col-md-3" role="complementary">
+  <section class="sidebox">
+    <h1 class="sidebox-title ico-bars">Dados do sistema</h1>
+    <div class="sidebox-inner">
+      <span class="status-text">
+        Questões cadastradas
+        <strong><%= User.count %></strong>
+      </span>
+      <hr>
+      <span class="status-text">
+        Quantidade de cursos
+        <strong><%= Course.count %></strong>
+      </span>
+    </div>
+    <div class="well well-sm well-status-sidebar txt-center no-margin-bottom">
+      <p>Total de questões no sistema</p>
+      <b><%= Survey::Question.count %></b>
+    </div>
+  </section>
 
-          <section class="sidebox">
-            <h1 class="sidebox-title ico-user">Dados da conta</h1>
-            <div class="sidebox-inner">
-              <span class="status-text">Plano
-                <b>Email Marketing III</b>
-              </span>
-              <hr>
-              <span class="status-text">Saldo Mensal
-                <b>10.000 envios</b>
-                <small>*Válido até 31/01/2012</small>
-              </span>
-            </div>
-            <a href="#" class="ico-arrow-right">Alterar Plano</a>
-          </section>
-
-          <section class="sidebox">
-            <h1 class="sidebox-title ico-bars">Consumo</h1>
-
-            <div class="sidebox-inner">
-
-              <span class="status-text">
-                Envios do plano
-                <strong>0</strong> de 20000
-              </span>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                  <span>70%</span>
-                </div>
-              </div>
-              <span class="status-text">
-                Quantidade válida até 03/11/2013
-              </span>
-              <hr>
-              <span class="status-text">
-                Envios excedentes
-                <span class="ico-question" data-trigger="hover" data-toggle="popover" data-placement="left" data-content="Isso permite que os envios não sejam interrompidos após atingir o limite do plano contratado." data-original-title="Envios excedentes está ativado!"></span>
-              </span>
-
-              <span class="status-text">
-                <strong>0</strong> de 20000
-              </span>
-
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
-                  <span>45%</span>
-                </div>
-              </div>
-            </div>
-            <div class="well well-sm well-status-sidebar txt-center no-margin-bottom">
-              <p>Total de envios utilizados</p>
-              <b>5.000</b>
-            </div>
-          </section>
-
-          <section class="sidebox">
-            <h1 class="sidebox-title ico-flag">Dicas</h1>
-            <div id="carousel" class="carousel slide">
-              <div class="carousel-inner">
-                <div class="item active sidebox-inner">
-                  <h2 class="title-6">Cuidado com os bounces</h2>
-                  <p>Bounces são tipos diversos de problemas que impedem que um contato receba a mensagem enviada.</p>
-                  <p>Por exemplo: e-mail inválido, caixa postal cheia, lentidão no servidor do destinatário, etc.</p>
-                </div>
-                <div class="item sidebox-inner">
-                  <h2 class="title-6">Cuidado com os bounces 2</h2>
-                  <p>Bounces são tipos diversos de problemas que impedem que um contato receba a mensagem enviada.</p>
-                  <p>Por exemplo: e-mail inválido, caixa postal cheia, lentidão no servidor do destinatário, etc.</p>
-                </div>
-              </div>
-              <div class="carousel-nav">
-                <a href="#carousel" class="left carousel-control ico-direction-left" data-slide="prev"></a>
-                <b>1</b> de <i>2</i>
-                <a href="#carousel" class="right carousel-control ico-direction-right" data-slide="next"></a>
-              </div>
-            </div>
-          </section>
-
-          <section class="sidebox">
-            <h1 class="sidebox-title ico-question">Ajuda e suporte</h1>
-            <ul class="sidebox-list">
-              <li><a href="" class="ico-redo-2 ico-pos-right">Central de Ajuda (Wiki)</a></li>
-              <li><a href="" class="ico-redo-2 ico-pos-right">Suporte 24hs</a></li>
-            </ul>
-          </section>
-        </aside>
+  <section class="sidebox">
+    <h1 class="sidebox-title ico-flag">Dicas</h1>
+    <div id="carousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active sidebox-inner">
+          <h2 class="title-6">Crie questões (3C)</h2>
+          <p>Acesse a área restrita e crie questões para aumentar a colaboração do sistema</p>
+        </div>
+        <!-- <div class="item sidebox-inner">
+          <h2 class="title-6">Cuidado com os bounces 2</h2>
+          <p>Bounces são tipos diversos de problemas que impedem que um contato receba a mensagem enviada.</p>
+          <p>Por exemplo: e-mail inválido, caixa postal cheia, lentidão no servidor do destinatário, etc.</p>
+        </div> -->
+      </div>
+      <div class="carousel-nav">
+        <a href="#carousel" class="left carousel-control ico-direction-left" data-slide="prev"></a>
+        <b>1</b> de <i>1</i>
+        <a href="#carousel" class="right carousel-control ico-direction-right" data-slide="next"></a>
+      </div>
+    </div>
+  </section>
+</aside>
