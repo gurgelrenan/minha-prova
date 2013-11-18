@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	@questions = Survey::Question.all
+  	@questions = []
 
   end
 end

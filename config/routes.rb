@@ -1,7 +1,4 @@
-MinhaProva::Application.routes.draw do
-  
-  
-  
+MinhaProva::Application.routes.draw do  
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   resources :tests
@@ -15,6 +12,8 @@ MinhaProva::Application.routes.draw do
   resources :colleges
 
   resources :teachers
+
+  resources :questions
 
   root "home#index"
   devise_for :users
