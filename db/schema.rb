@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131108022819) do
+ActiveRecord::Schema.define(version: 20131119000652) do
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -62,22 +62,14 @@ ActiveRecord::Schema.define(version: 20131108022819) do
 
   create_table "questions", force: true do |t|
     t.text     "description"
-    t.string   "type_question"
-    t.integer  "ranking"
-    t.integer  "teacher_id"
     t.integer  "discipline_id"
-    t.integer  "test_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree
-  add_index "questions", ["teacher_id"], name: "index_questions_on_teacher_id", using: :btree
-  add_index "questions", ["test_id"], name: "index_questions_on_test_id", using: :btree
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
