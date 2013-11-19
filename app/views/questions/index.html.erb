@@ -5,16 +5,20 @@
 			<thead>
 				<tr>
 					<th>Título</th>
+					<th>Disciplina</th>
+					<th>Autor</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<% @questions.each do |q| %>
-						<td><%= q.text %></td>
+						<td><%= q.description %></td>
+						<td><%= q.discipline.name %></td>
+						<td><%= q.user.teacher.name %></td>
 					<% end %>
 				</tr>
 			</tbody>
 		</table>
-		<%= link_to "Criar questão", rails_admin_path %>
+		<%= link_to "Criar questão", rails_admin.new_path('question'), class: "btn btn-default ico-plus" %>
 	</div>
 </div>

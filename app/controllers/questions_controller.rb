@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
 	def index
-		@questions = []
+		@questions = Question.all
 	end
 end

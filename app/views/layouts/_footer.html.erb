@@ -3,16 +3,13 @@
       <nav class="container">
         <h2 class="title-footer">suporte e ajuda</h2>
         <ul class="no-liststyle">
-          <li><a href="#" class="bg-customer-support"><span class="visible-lg">Atendimento</span></a></li>
-          <li><a href="#" class="bg-my-tickets"><span class="visible-lg">Meus Chamados</span></a></li>
-          <li><a href="#" class="bg-help-desk"><span class="visible-lg">Central de Ajuda (Wiki)</span></a></li>
-          <li><a href="#" class="bg-statusblog"><span class="visible-lg">Statusblog</span></a></li>
+          <li><a href="#" class="bg-customer-support"><span class="visible-lg">Contato</span></a></li>
         </ul>
       </nav>
     </div>
     <div class="container footer-info">
-      <span class="last-access ico-screen"><strong>Último acesso: </strong>7/8/2011 22:35:49</span>
-      <div class="set-ip"><span class="set-ip"><strong>IP:</strong> 201.87.65.217</span></span></div>
-      <p class="copy-right">Copyright © 1997-2011 Locaweb Serviços de Internet S/A.</p>
+      <span class="last-access ico-screen"><strong>Último acesso: </strong><%= current_user.last_sign_in_at.to_date %></span>
+      <div class="set-ip"><span class="set-ip"><strong>IP:</strong><%= current_user.current_sign_in_ip %></span></span></div>
+      <p class="copy-right">Copyright © 2013 Renan Gurgel</p>
     </div>
   </footer>

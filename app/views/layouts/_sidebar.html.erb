@@ -3,7 +3,7 @@
     <h1 class="sidebox-title ico-bars">Dados do sistema</h1>
     <div class="sidebox-inner">
       <span class="status-text">
-        Questões cadastradas
+        Quantidade de colaboradores
         <strong><%= User.count %></strong>
       </span>
       <hr>
@@ -14,7 +14,7 @@
     </div>
     <div class="well well-sm well-status-sidebar txt-center no-margin-bottom">
       <p>Total de questões no sistema</p>
-      <b>A FAZER</b>
+      <b><%= Question.count %></b>
     </div>
   </section>
 
