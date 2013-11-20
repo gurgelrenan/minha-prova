@@ -7,8 +7,11 @@ set :repository,  "git@github.com:gurgelrenan/minha-prova.git"
 set :domain, "minhaprova.com.br"
 
 set :scm, :git
+set :use_sudo, false
 
-server "162.243.39.67", :app, :web, :db, :primary => true
+role :web, domain
+role :app, domain
+role :db, domain,:primary => true
 
 set :deploy_to, "/var/www/minhaprova.com.br"
 set :rails_env, 'production'
