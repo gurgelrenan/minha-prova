@@ -1,3 +1,4 @@
+require "rvm/capistrano"
 require 'bundler/capistrano'
 
 set :user, "renan"
@@ -7,9 +8,7 @@ set :domain, "minhaprova.com.br"
 
 set :scm, :git
 
-role :web, domain 
-role :app, domain 
-role :db, domain,:primary => true
+server "162.243.39.67", :app, :web, :db, :primary => true
 
 set :deploy_to, "/var/www/minhaprova.com.br"
 set :rails_env, 'production'
