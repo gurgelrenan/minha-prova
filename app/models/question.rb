@@ -8,11 +8,10 @@
 #  user_id       :integer
 #  created_at    :datetime
 #  updated_at    :datetime
-#  difficulty    :integer
 #
 
 class Question < ActiveRecord::Base
-	seems_rateable :dimensions => [:difficulty]
+	seems_rateable :allow_update=> true
   belongs_to :discipline
   belongs_to :user
 end
