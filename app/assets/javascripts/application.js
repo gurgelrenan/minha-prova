@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require locastyle
 //= require bootstrap
+//= require_directory ./rateable
 //= require_tree .
 

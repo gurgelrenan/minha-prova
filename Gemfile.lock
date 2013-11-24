@@ -157,6 +157,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    seems_rateable (1.0.10)
+      jquery-rails
+      rails
     simple_form (3.0.0)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
@@ -206,6 +209,7 @@ DEPENDENCIES
   rails_admin
   sass-rails (~> 4.0.0)
   sdoc
+  seems_rateable
   simple_form
   therubyracer
   turbolinks
