@@ -1,6 +1,38 @@
 <div class="row">
-	<div class="col-md-12 well center">
-		<h2><%= @question.description %></h2>
-		<%= render "disqus" %>
-	</div>	
+	<h3>Questão #<%= @question.id %>:</h3>
+	<div class="col-md-9 well center">
+		<p><%= @question.description %></p>	
+	</div>
+
+	<aside class="sidebar col-md-3 no-margin-top" role="complementary">
+		<section class="sidebox">
+			<h1 class="sidebox-title ico-user">Detalhes da questão</h1>
+			<div class="sidebox-inner">
+				<span class="status-text">
+					Criado por:
+					<b><%= @question.user.teacher.name %></b>
+				</span>
+				<span class="status-text">
+					Disciplina:
+					<b><%= @question.discipline.name %></b>
+				</span>
+				<span class="status-text">
+					Criado em:
+					<b><%= formata_data(@question.created_at) %></b>
+				</span>
+				<span class="status-text">
+					Última atualização:
+					<b><%= formata_data(@question.updated_at) %></b>
+				</span>
+			</div>
+
+			<div class="well well-sm txt-center no-margin-bottom">
+				<p><strong>Dificuldade</strong></p>
+				<p class="total-sent"><strong><%= rating_for @question %></strong></p>
+			</div>
+			
+			<a class="ico-list" href="<%= questions_path %>">Todas as questões</a>
+		</section>
+	</aside>
+	<%= render "disqus" %>
 </div>
