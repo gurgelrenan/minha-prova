@@ -13,7 +13,7 @@
 			<% @questions.each do |q| %>
 				<tbody>
 					<tr>
-							<td><%= q.description %></td>
+							<td><%= link_to q.description, question_path(q) %></td>
 							<td><%= q.discipline.name %></td>
 							<td><%= q.user.teacher.name %></td>
 							<td><%= rating_for q %></td>		
