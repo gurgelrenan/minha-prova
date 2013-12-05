@@ -5,7 +5,6 @@ class CreateDisciplines < ActiveRecord::Migration
       t.text :description
       t.references :college, index: true
       t.references :teacher, index: true
-      t.references :core, index: true
       t.references :course, index: true
 
       t.timestamps

@@ -7,7 +7,6 @@
 #  description :text
 #  college_id  :integer
 #  teacher_id  :integer
-#  core_id     :integer
 #  course_id   :integer
 #  created_at  :datetime
 #  updated_at  :datetime
@@ -19,14 +18,12 @@ one:
   name: MyString
   description: MyText
   college_id: 
-  teacher_id: 
-  core_id: 
+  teacher_id:  
   course_id: 
 
 two:
   name: MyString
   description: MyText
   college_id: 
-  teacher_id: 
-  core_id: 
+  teacher_id:  
   course_id: 

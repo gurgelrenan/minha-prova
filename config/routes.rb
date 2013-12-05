@@ -6,8 +6,6 @@ MinhaProva::Application.routes.draw do
 
   resources :disciplines
 
-  resources :cores
-
   resources :courses
 
   resources :colleges

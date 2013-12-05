@@ -18,7 +18,7 @@ class DisciplinesControllerTest < ActionController::TestCase
 
   test "should create discipline" do
     assert_difference('Discipline.count') do
-      post :create, discipline: { college_id: @discipline.college_id, core_id: @discipline.core_id, course_id: @discipline.course_id, description: @discipline.description, name: @discipline.name, teacher_id: @discipline.teacher_id }
+      post :create, discipline: { college_id: @discipline.college_id, course_id: @discipline.course_id, description: @discipline.description, name: @discipline.name, teacher_id: @discipline.teacher_id }
     end
 
     assert_redirected_to discipline_path(assigns(:discipline))
@@ -35,7 +35,7 @@ class DisciplinesControllerTest < ActionController::TestCase
   end
 
   test "should update discipline" do
-    patch :update, id: @discipline, discipline: { college_id: @discipline.college_id, core_id: @discipline.core_id, course_id: @discipline.course_id, description: @discipline.description, name: @discipline.name, teacher_id: @discipline.teacher_id }
+    patch :update, id: @discipline, discipline: { college_id: @discipline.college_id, course_id: @discipline.course_id, description: @discipline.description, name: @discipline.name, teacher_id: @discipline.teacher_id }
     assert_redirected_to discipline_path(assigns(:discipline))
   end
 

@@ -16,13 +16,10 @@ ufc = College.create(name: "UFC", city: "Fortaleza", state: "Ceará")
 cc_uece = Course.create(name: "Ciência da Computação", college_id: uece.id)
 cc_ufc = Course.create(name: "Ciência da Computação", college_id: ufc.id)
 
-core_uece = Core.create(name: "CCT", course_id: cc_uece.id)
-Core.create(name: "CCT", course_id: cc_ufc.id)
-
-paulo = Teacher.create(name: "Paulo", user_id: user.id, core_id: core_uece.id, course_id: cc_uece.id)
+paulo = Teacher.create(name: "Paulo", user_id: user.id, course_id: cc_uece.id)
 
 icc = Discipline.create(name: "Iniciaçao da Ciência da Computação", description: "Uma descricão da disciplina de Ordenação", college_id: uece.id,
-					teacher_id: paulo.id, core_id: core_uece.id, course_id: cc_uece.id)
+					teacher_id: paulo.id, course_id: cc_uece.id)
 
 Question.create(description: "Quem foi a primeira programadora?", discipline_id: icc.id, user_id: user.id)
 

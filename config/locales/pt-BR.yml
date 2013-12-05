@@ -1,7 +1,6 @@
 pt-BR:
   models:
     college: "Universidade"
-    core: "Núcleo"
     course: "Curso"
     discipline: "Disciplina"
     question: "Questão"

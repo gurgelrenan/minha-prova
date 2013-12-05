@@ -5,7 +5,6 @@
     <tr>
       <th>Nome</th>
       <th>Email de usuário</th>
-      <th>Núcleo</th>
       <th>Curso</th>
       <th>Ações</th>
     </tr>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= teacher.name %></td>
         <td><%= teacher.user ? teacher.user.email : "Ainda não existe um email cadastrado" %></td>
-        <td><%= teacher.core ? teacher.core.name : "Ainda não pertence a nenhum núcleo" %></td>
         <td><%= teacher.course ? teacher.course.name : "Ainda não pertence a nenhum curso" %></td>
         <td nowrap>
           <%= link_to "", teacher_path(teacher), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>

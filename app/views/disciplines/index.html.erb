@@ -7,7 +7,6 @@
       <th>Descrição</th>
       <th>Universidade</th>
       <th>Professor</th>
-      <th>Núcleo</th>
       <th>Curso</th>
       <th>Ações</th>
     </tr>
@@ -20,7 +19,6 @@
         <td><%= discipline.description %></td>
         <td><%= discipline.college.name %></td>
         <td><%= discipline.teacher.name %></td>
-        <td><%= discipline.core.name %></td>
         <td><%= discipline.course.name %></td>
         <td nowrap>
           <%= link_to "", discipline_path(discipline), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>

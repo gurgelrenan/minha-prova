@@ -1,7 +1,6 @@
 <%= simple_form_for(@teacher, html: { role: "form"  }) do |f| %>
   <%= f.input :name %>
   <%= f.association :user, prompt: "Escolha um usuário" %>
-  <%= f.association :core, prompt: "Escolha um núcleo" %>
   <%= f.association :course, prompt: "Escolha um curso" %>
 
   <%= f.button :submit, class: "btn btn-primary", value: "Cadastrar" %>
