@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131124142037) do
+ActiveRecord::Schema.define(version: 20131205031559) do
+
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "option_id"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "option_text"
+    t.integer  "option_number"
+  end
+
+  add_index "answers", ["option_id"], name: "index_answers_on_option_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "colleges", force: true do |t|
     t.string   "name"
@@ -49,12 +62,25 @@ ActiveRecord::Schema.define(version: 20131124142037) do
   add_index "disciplines", ["course_id"], name: "index_disciplines_on_course_id", using: :btree
   add_index "disciplines", ["teacher_id"], name: "index_disciplines_on_teacher_id", using: :btree
 
+  create_table "options", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "weight",          default: 0
+    t.string   "text"
+    t.boolean  "correct"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "options_type_id"
+  end
+
+  add_index "options", ["question_id"], name: "index_options_on_question_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.text     "description"
     t.integer  "discipline_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "questions_type_id"
   end
 
   add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree

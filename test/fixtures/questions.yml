@@ -2,12 +2,13 @@
 #
 # Table name: questions
 #
-#  id            :integer          not null, primary key
-#  description   :text
-#  discipline_id :integer
-#  user_id       :integer
-#  created_at    :datetime
-#  updated_at    :datetime
+#  id                :integer          not null, primary key
+#  description       :text
+#  discipline_id     :integer
+#  user_id           :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  questions_type_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
