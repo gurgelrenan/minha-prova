@@ -12,7 +12,7 @@
 #
 
 class Question < ActiveRecord::Base
-	seems_rateable :allow_update=> true
+	#seems_rateable :allow_update=> true
 
   belongs_to :discipline
   belongs_to :user

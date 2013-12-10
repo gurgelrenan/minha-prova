@@ -19,7 +19,7 @@ class Answer < ActiveRecord::Base
   validates :option_id, :question_id, presence: true
 
   before_create :characterize_answer
-  #before_save :check_single_choice_with_field_case
+  before_save :check_single_choice_with_field_case
 
   def value
     unless self.option == nil
@@ -41,10 +41,10 @@ class Answer < ActiveRecord::Base
     end
   end
 
-  # def check_single_choice_with_field_case
-  #   if [Survey::OptionsType.multi_choices, Survey::OptionsType.single_choice].include?(self.option.options_type_id)
-  #     self.option_text = nil 
-  #     self.option_number = nil
-  #   end
-  # end
+  def check_single_choice_with_field_case
+    if [OptionsType.multi_choices, OptionsType.single_choice].include?(self.option.options_type_id)
+      self.option_text = nil 
+      self.option_number = nil
+    end
+  end
 end

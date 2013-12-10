@@ -1,0 +1,9 @@
+<%= simple_form_for(@question, html: { role: "form"  }) do |f| %>
+  <fieldset>
+    <%= f.input :description, label: "Descrição" %>  
+    <%= f.association :discipline, label: "Disciplina" %>
+    <%= f.association :options %>
+    
+    <%= f.button :submit, class: "btn btn-primary", value: "Cadastrar" %>
+  </fieldset>
+<% end %>
