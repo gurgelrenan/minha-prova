@@ -2,14 +2,12 @@
 #
 # Table name: options
 #
-#  id              :integer          not null, primary key
-#  question_id     :integer
-#  weight          :integer          default(0)
-#  text            :string(255)
-#  correct         :boolean
-#  created_at      :datetime
-#  updated_at      :datetime
-#  options_type_id :integer
+#  id          :integer          not null, primary key
+#  question_id :integer
+#  text        :string(255)
+#  correct     :boolean
+#  created_at  :datetime
+#  updated_at  :datetime
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

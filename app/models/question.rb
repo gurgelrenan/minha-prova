@@ -2,13 +2,13 @@
 #
 # Table name: questions
 #
-#  id                :integer          not null, primary key
-#  description       :text
-#  discipline_id     :integer
-#  user_id           :integer
-#  created_at        :datetime
-#  updated_at        :datetime
-#  questions_type_id :integer
+#  id             :integer          not null, primary key
+#  description    :text
+#  discipline_id  :integer
+#  user_id        :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  questions_type :string(255)
 #
 
 class Question < ActiveRecord::Base
@@ -19,12 +19,11 @@ class Question < ActiveRecord::Base
   has_many :options
 
   accepts_nested_attributes_for :options,
-    :reject_if => ->(a) { a[:options_type_id].blank? },
+    :reject_if => ->(a) { a[:text].blank? },
       :allow_destroy => true
 
+  #attr_accessible :options_attributes, :description
   validates :description, presence: true, allow_blank: false
-  validates :questions_type_id, presence: true
-  validates_inclusion_of :questions_type_id, :in => QuestionsType.questions_type_ids, :unless => Proc.new{|q| q.questions_type_id.blank?}
 
   def correct_options
     options.correct
@@ -33,7 +32,4 @@ class Question < ActiveRecord::Base
   def incorrect_options
     options.incorrect
   end
-
-
-
 end

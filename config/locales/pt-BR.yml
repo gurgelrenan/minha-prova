@@ -1,4 +1,7 @@
 pt-BR:
+  admin:
+    form:
+        new_model: "Nova aba"
   models:
     college: "Universidade"
     course: "Curso"

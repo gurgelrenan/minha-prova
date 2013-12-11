@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205031559) do
+ActiveRecord::Schema.define(version: 20131211034319) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20131205031559) do
     t.boolean  "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "option_text"
-    t.integer  "option_number"
   end
 
   add_index "answers", ["option_id"], name: "index_answers_on_option_id", using: :btree
@@ -64,12 +62,10 @@ ActiveRecord::Schema.define(version: 20131205031559) do
 
   create_table "options", force: true do |t|
     t.integer  "question_id"
-    t.integer  "weight",          default: 0
     t.string   "text"
     t.boolean  "correct"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "options_type_id"
   end
 
   add_index "options", ["question_id"], name: "index_options_on_question_id", using: :btree
@@ -80,7 +76,7 @@ ActiveRecord::Schema.define(version: 20131205031559) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "questions_type_id"
+    t.string   "questions_type"
   end
 
   add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree

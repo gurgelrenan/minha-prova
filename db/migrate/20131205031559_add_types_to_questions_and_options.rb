@@ -1,7 +1,7 @@
 class AddTypesToQuestionsAndOptions < ActiveRecord::Migration
   def change
     #Questions table
-    add_column :questions, :questions_type_id, :integer
+    add_column :questions, :questions_type, :string
     
     #Options table
     add_column :options, :options_type_id, :integer
