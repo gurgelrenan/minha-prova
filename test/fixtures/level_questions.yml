@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: level_questions
+#
+#  id          :integer          not null, primary key
+#  value       :integer
+#  question_id :integer
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value: 1
+  question_id: 
+  user_id: 
+
+two:
+  value: 1
+  question_id: 
+  user_id: 
