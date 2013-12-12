@@ -2,13 +2,13 @@
 #
 # Table name: questions
 #
-#  id             :integer          not null, primary key
-#  description    :text
-#  discipline_id  :integer
-#  user_id        :integer
-#  created_at     :datetime
-#  updated_at     :datetime
-#  questions_type :string(255)
+#  id               :integer          not null, primary key
+#  description      :text
+#  discipline_id    :integer
+#  user_id          :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#  question_type_id :integer
 #
 
 class Question < ActiveRecord::Base
@@ -17,6 +17,7 @@ class Question < ActiveRecord::Base
   belongs_to :discipline
   belongs_to :user
   has_many :options
+  belongs_to :question_type
 
   accepts_nested_attributes_for :options,
     :reject_if => ->(a) { a[:text].blank? },

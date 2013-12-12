@@ -21,7 +21,10 @@ paulo = Teacher.create(name: "Paulo", user_id: user.id, course_id: cc_uece.id)
 icc = Discipline.create(name: "Iniciaçao da Ciência da Computação", description: "Uma descricão da disciplina de Ordenação", college_id: uece.id,
 					teacher_id: paulo.id, course_id: cc_uece.id)
 
-Question.create(description: "Quem foi a primeira programadora?", discipline_id: icc.id, user_id: user.id)
+QuestionType.create(name: "Subjetiva")
+QuestionType.create(name: "Objetiva")
+
+Question.create(description: "Quem foi a primeira programadora?", discipline_id: icc.id, user_id: user.id, question_type_id: 1)
 
 
 
