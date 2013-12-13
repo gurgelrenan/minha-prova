@@ -28,7 +28,7 @@
 
 			<div class="well well-sm txt-center no-margin-bottom">
 				<p><strong>Dificuldade</strong></p>
-				<p class="total-sent"><strong><%= rating_for @question %></strong></p>
+				<p class="total-sent"><strong><%= @question.level_questions.first %></strong></p>
 			</div>
 			
 			<a class="ico-list" href="<%= questions_path %>">Todas as questões</a>

@@ -7,6 +7,8 @@
 					<th>Título</th>
 					<th>Disciplina</th>
 					<th>Autor</th>
+					<th>Tipo</th>
+					<th>Dificuldade</th>
 				</tr>
 			</thead>
 			<% @questions.each do |q| %>
@@ -14,7 +16,9 @@
 					<tr>
 							<td><%= link_to q.description, question_path(q) %></td>
 							<td><%= q.discipline.name %></td>
-							<td><%= q.user.teacher.name %></td>
+							<td><%= q.user.name if !q.user.blank? %></td>
+							<td><%= q.question_type.name if !q.question_type.blank? %></td>
+							<td><%= q.level_average if q.level_questions.count > 0 %></td>
 					</tr>
 				</tbody>
 			<% end %>

@@ -12,7 +12,6 @@
 #
 
 class Question < ActiveRecord::Base
-	#seems_rateable :allow_update=> true
 
   belongs_to :discipline
   belongs_to :user
@@ -25,6 +24,8 @@ class Question < ActiveRecord::Base
     :reject_if => ->(a) { a[:text].blank? },
       :allow_destroy => true
 
+  accepts_nested_attributes_for :level_questions    
+
   #attr_accessible :options_attributes, :description
   validates :description, presence: true, allow_blank: false
 
@@ -34,5 +35,9 @@ class Question < ActiveRecord::Base
 
   def incorrect_options
     options.incorrect
+  end
+
+  def level_average
+    level_questions.map { |l| l.value }.sum / level_questions.count
   end
 end
