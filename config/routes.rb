@@ -1,7 +1,6 @@
 MinhaProva::Application.routes.draw do  
   
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-  seems_rateable
   
   resources :tests
 

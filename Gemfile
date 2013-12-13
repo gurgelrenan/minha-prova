@@ -10,7 +10,6 @@ gem 'simple_form'
 gem 'paperclip'
 gem 'newrelic_rpm'
 gem 'rails_admin'
-gem 'seems_rateable'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
