@@ -11,7 +11,7 @@
 #
 
 class Option < ActiveRecord::Base
-  belongs_to :question
+  belongs_to :question, inverse_of: :options
 
   scope :correct, -> {where(:correct => true) }
   scope :incorrect, -> {where(:correct => false) }

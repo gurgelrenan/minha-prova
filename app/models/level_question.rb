@@ -11,6 +11,6 @@
 #
 
 class LevelQuestion < ActiveRecord::Base
-  belongs_to :question
+  belongs_to :question, inverse_of: :level_questions
   belongs_to :user
 end
