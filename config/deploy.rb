@@ -14,6 +14,7 @@ role :app, domain
 role :db, domain,:primary => true
 
 set :deploy_to, "/var/www/minhaprova.com.br"
+set :deploy_via, :remote_cache
 set :rails_env, 'production'
 
 # If you are using Passenger mod_rails uncomment this:
