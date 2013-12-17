@@ -16,6 +16,7 @@ class Question < ActiveRecord::Base
   belongs_to :discipline
   belongs_to :user
   belongs_to :question_type
+  
 
   has_many :options
   has_many :level_questions
@@ -37,7 +38,7 @@ class Question < ActiveRecord::Base
     options.incorrect
   end
 
-  def level_average
-    level_questions.map { |l| l.value }.sum / level_questions.count
+  def average
+    self.level_questions.average('value').to_f
   end
 end

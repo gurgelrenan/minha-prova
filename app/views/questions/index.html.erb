@@ -18,7 +18,7 @@
 							<td><%= q.discipline.name %></td>
 							<td><%= q.user.name if !q.user.blank? %></td>
 							<td><%= q.question_type.name if !q.question_type.blank? %></td>
-							<td><%= q.level_average if q.level_questions.count > 0 %></td>
+							<td><%= q.average if q.level_questions.count > 0 %></td>
 					</tr>
 				</tbody>
 			<% end %>

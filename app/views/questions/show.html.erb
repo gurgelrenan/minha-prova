@@ -2,6 +2,14 @@
 	<h3>Questão #<%= @question.id %>:</h3>
 	<div class="col-md-9 well center">
 		<p><%= @question.description %></p>	
+		<hr>
+		<% if @question.options.correct.any? %>
+				<h4>Resposta</h4>
+				<p><%= @question.options.correct.first.to_s %></p>
+		<% else %>
+			<p><b>Essa questão não tem resposta, ainda.<b></p>	
+			<p><%= link_to "Cadastrar Resposta", rails_admin.edit_path(model_name: 'question', id: @question.id) %></p>
+		<% end %>
 	</div>
 
 	<aside class="sidebar col-md-3 no-margin-top" role="complementary">
@@ -28,7 +36,7 @@
 
 			<div class="well well-sm txt-center no-margin-bottom">
 				<p><strong>Dificuldade</strong></p>
-				<p class="total-sent"><strong><%= @question.level_average %></strong></p>
+				<p class="total-sent"><strong><%= @question.average %></strong></p>
 			</div>
 			
 			<a class="ico-list" href="<%= questions_path %>">Todas as questões</a>
