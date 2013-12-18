@@ -1,17 +1,27 @@
+<h2>Questões</h2>
+<%= search_form_for @q, :class => 'form-inline' do |f| %>
+
+	<div class="row">
+		<div class="col-md-9 content well" role="main">
+			<h4>Pesquisa</h4>
+			<p>
+				<%= f.label :description_cont, "Descrição" %>
+			  <%= f.text_field :description_cont, class: "form-control" %>
+			  <%= f.label :discipline_name_cont, "Nome da disciplina" %>
+			  <%= f.text_field :discipline_name_cont, class: "form-control" %>
+			  <%= f.label :user_name_cont, "Nome do criador" %>
+			  <%= f.text_field :user_name_cont, class: "form-control" %>
+			  <%= f.label :question_type_name_cont, "Tipo da questão" %>
+			  <%= f.text_field :question_type_name_cont, class: "form-control" %>
+				<%= f.submit "Pesquisar", :name => nil, :class => "btn btn-info btn-small" %>
+			</p>
+		</div>
+	</div>
+<% end %>
+
+
 <div class="row">
 	<div class="col-md-9 content" role="main">
-		<h2>Questões</h2>
-		<%= search_form_for @q do |f| %>
-  		<%= f.label :description_cont %>
-		  <%= f.text_field :description_cont %>
-		  <%= f.label :discipline_name_cont %>
-		  <%= f.text_field :discipline_name_cont %>
-		  <%= f.label :user_name_cont %>
-		  <%= f.text_field :user_name_cont %>
-		  <%= f.label :question_type_name_cont %>
-		  <%= f.text_field :question_type_name_cont %>
-  		<%= f.submit %>
-<% end %>
 		<table class="table table-style">
 			<thead>
 				<tr>
