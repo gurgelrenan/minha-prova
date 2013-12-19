@@ -1,20 +1,36 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "questions" %>
+<% end %>
+
 <h2>Questões</h2>
-<%= search_form_for @q, :class => 'form-inline' do |f| %>
+<%= search_form_for @q, :class => 'form-inline', html: { role: "form"  } do |f| %>
 
 	<div class="row">
-		<div class="col-md-9 content well" role="main">
+		<div class="col-md-12 well">
 			<h4>Pesquisa</h4>
-			<p>
-				<%= f.label :description_cont, "Descrição" %>
-			  <%= f.text_field :description_cont, class: "form-control" %>
-			  <%= f.label :discipline_name_cont, "Nome da disciplina" %>
-			  <%= f.text_field :discipline_name_cont, class: "form-control" %>
-			  <%= f.label :user_name_cont, "Nome do criador" %>
-			  <%= f.text_field :user_name_cont, class: "form-control" %>
-			  <%= f.label :question_type_name_cont, "Tipo da questão" %>
-			  <%= f.text_field :question_type_name_cont, class: "form-control" %>
-				<%= f.submit "Pesquisar", :name => nil, :class => "btn btn-info btn-small" %>
-			</p>
+
+  <div class="form-group">
+  	<%= f.label :description_cont, "Descrição" %>
+  	<%= f.text_field :description_cont, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  	<%= f.label :discipline_name_eq, "Nome da disciplina" %>
+    <%= f.select :discipline_name_eq, options_from_collection_for_select(Discipline.all, :name, :name), class: "form-control" %>
+  </div>
+	
+	<div class="form-group">
+  	<%= f.label :user_name_eq, "Nome do criador" %>
+	  <%= f.select :user_name_eq, options_from_collection_for_select(User.all, :name, :name), class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+  	<%= f.label :question_type_name_eq, "Tipo da questão" %>
+  	<%= f.select :question_type_name_eq, options_from_collection_for_select(QuestionType.all, :name, :name), class: "form-control" %>
+  </div>
+	<br />
+	<br />		  		  
+	<%= f.submit "Pesquisar", :name => nil, :class => "btn btn-info btn-small" %>
 		</div>
 	</div>
 <% end %>
@@ -25,10 +41,10 @@
 		<table class="table table-style">
 			<thead>
 				<tr>
-					<th>Título</th>
-					<th>Disciplina</th>
-					<th>Autor</th>
-					<th>Tipo</th>
+					<th><%= sort_link @q, :description, "Título" %></th>
+					<th><%= sort_link @q, :discipline_name, "Disciplina" %></th>
+					<th><%= sort_link @q, :user_name, "Autor" %></th>
+					<th><%= sort_link @q, :question_type_value, "Tipo" %></th>
 					<th>Dificuldade</th>
 				</tr>
 			</thead>

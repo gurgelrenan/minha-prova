@@ -3,6 +3,7 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
+    @test = Test.new(name: "blaa").save
   end
 
   def show

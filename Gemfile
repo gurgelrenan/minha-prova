@@ -11,6 +11,8 @@ gem 'paperclip'
 gem 'newrelic_rpm'
 gem 'rails_admin'
 gem 'ransack'
+gem 'prawn'
+gem "select2-rails"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
