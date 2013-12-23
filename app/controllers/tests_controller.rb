@@ -1,9 +1,13 @@
+# encoding: utf-8
+
 class TestsController < ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tests = Test.all
-    @test = Test.new(name: "blaa").save
+    if current_user.teacher.nil?
+      redirect_to teste_path, alert: "Seu usuário não está relacionado com nenhum professor."
+    end
+    @current_user_tests = Test.for_user(current_user.teacher.id)
   end
 
   def show
@@ -48,6 +52,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name)
+      params.require(:test).permit(:name, :level)
     end
 end

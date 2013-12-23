@@ -16,4 +16,6 @@ class Teacher < ActiveRecord::Base
   has_and_belongs_to_many :colleges
   has_many :disciplines
   has_many :tests
+
+  validates_presence_of :name
 end
