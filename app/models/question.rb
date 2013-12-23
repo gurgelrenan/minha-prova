@@ -20,6 +20,7 @@ class Question < ActiveRecord::Base
 
   has_many :options
   has_many :level_questions
+  has_and_belongs_to_many :tests
 
   accepts_nested_attributes_for :options,
     :reject_if => ->(a) { a[:text].blank? },
