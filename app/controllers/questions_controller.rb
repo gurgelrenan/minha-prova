@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
 	before_action :set_question, only: [:show]
+  before_action :authenticate_user!
 	def index
 		@q = Question.search(params[:q])
     @questions = @q.result(distinct: true)
