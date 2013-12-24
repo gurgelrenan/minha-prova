@@ -17,4 +17,12 @@ class Test < ActiveRecord::Base
   has_and_belongs_to_many :questions
 
   scope :for_user, -> (id) { where(teacher_id: id) }
+
+  validates :name, presence: true
+  validates :teacher_id, presence: true
+  validates :discipline_id, presence: true
+
+  def generate(questions)
+    
+  end
 end

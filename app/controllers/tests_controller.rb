@@ -11,6 +11,15 @@ class TestsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+     format.html
+     format.pdf do
+        pdf = TestPdf.new(@test)
+        send_data pdf.render, filename: "test_#{@test.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+   end
   end
 
   def new
@@ -22,11 +31,16 @@ class TestsController < ApplicationController
 
   def create
     @test = Test.new(test_params)
-    if @test.save
+    discipline_questions = @test.discipline.questions
+
+    if discipline_questions.count.zero?
+      flash[:danger] = "A disciplina #{@test.discipline.name} não possui questões"
+      redirect_to tests_path
+    else
+      @test.generate(discipline_questions) 
+      @test.save
       flash[:success] = "Prova criada com sucesso!"
       redirect_to @test
-    else
-      render "new"
     end
   end
 
@@ -52,6 +66,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name, :level)
+      params.require(:test).permit(:name, :level, :teacher_id, :discipline_id)
     end
 end
