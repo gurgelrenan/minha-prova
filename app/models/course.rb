@@ -13,4 +13,6 @@ class Course < ActiveRecord::Base
   belongs_to :college
   has_many :teachers
   has_many :disciplines
+
+  validates :name, :college_id, presence: true
 end

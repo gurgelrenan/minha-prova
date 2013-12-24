@@ -18,11 +18,5 @@ class Test < ActiveRecord::Base
 
   scope :for_user, -> (id) { where(teacher_id: id) }
 
-  validates :name, presence: true
-  validates :teacher_id, presence: true
-  validates :discipline_id, presence: true
-
-  def generate(questions)
-    
-  end
+  validates :name, :teacher_id, :discipline_id, presence: true
 end

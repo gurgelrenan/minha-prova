@@ -18,4 +18,6 @@ class Discipline < ActiveRecord::Base
   belongs_to :course
   has_many :tests
   has_many :questions
+
+  validates :name, :college_id, :teacher_id, :college_id, presence: true
 end

@@ -17,5 +17,5 @@ class Teacher < ActiveRecord::Base
   has_many :disciplines
   has_many :tests
 
-  validates_presence_of :name
+  validates :name, :user_id, :course_id, presence: true
 end

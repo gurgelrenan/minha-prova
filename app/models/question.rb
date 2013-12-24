@@ -28,8 +28,8 @@ class Question < ActiveRecord::Base
 
   accepts_nested_attributes_for :level_questions    
 
-  #attr_accessible :options_attributes, :description
   validates :description, presence: true, allow_blank: false
+  validates :discipline_id, :user_id, presence: true
 
   def correct_options
     options.correct
