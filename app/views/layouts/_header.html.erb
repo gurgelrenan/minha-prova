@@ -23,13 +23,13 @@
   <div class="nav-content">
     <menu class="menu">
       <ul class="container">
-        <li><a href="/" class="active ico-home" role="menuitem">Home</a></li>
-        <li><%= link_to "Professores", teachers_path, role: "menu-item" %></li>
-        <li><%= link_to "Questões", questions_path, role: "menu-item" %></li>
-        <li><%= link_to "Universidades", colleges_path, role: "menu-item" %></li>
-        <li><%= link_to "Cursos", courses_path, role: "menu-item" %></li>
-        <li><%= link_to "Disciplinas", disciplines_path, role: "menu-item" %></li>
-        <li><%= link_to "Provas", tests_path, role: "menu-item" %></li>
+        <li><a href="/" class="<%= 'active' if params[:controller] == 'home' %> ico-home" role="menuitem">Home</a></li>
+        <li><%= link_to "Professores", teachers_path, role: "menu-item", class: params[:controller] == 'teachers' ? 'active' : '' %></li>
+        <li><%= link_to "Questões", questions_path, role: "menu-item", class: params[:controller] == 'questions' ? 'active' : '' %></li>
+        <li><%= link_to "Universidades", colleges_path, role: "menu-item", class: params[:controller] == 'colleges' ? 'active' : '' %></li>
+        <li><%= link_to "Cursos", courses_path, role: "menu-item", class: params[:controller] == 'courses' ? 'active' : '' %></li>
+        <li><%= link_to "Disciplinas", disciplines_path, role: "menu-item", class: params[:controller] == 'disciplines' ? 'active' : '' %></li>
+        <li><%= link_to "Provas", tests_path, role: "menu-item", class: params[:controller] == 'tests' ? 'active' : '' %></li>
       </ul>
     </menu>
   </div>
