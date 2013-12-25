@@ -209,3 +209,21 @@ pt-BR:
   activerecord:
     errors:
       <<: *errors
+    models:
+      college: "Universidade"
+      course: "Curso"
+      discipline: "Disciplina"
+      option: "Opção"
+      question: "Questão"
+      question_type: "Tipo de Questão"
+      teacher: "Professor"
+      test: "Prova"
+      user: "Usuário"
+    attributes:
+      course:
+        name: "Nome"
+        college: "Universidade"
+        teachers: "Professores"
+        disciplines: "Disciplinas"
+      user:
+        email: "E-mail"
