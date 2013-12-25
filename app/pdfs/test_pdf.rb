@@ -13,11 +13,27 @@ class TestPdf< Prawn::Document
 
     move_down 20
 
-    @test.discipline.questions.each_with_index do |question, index|
-      text "#{index+1}. #{question.description}", size:14, align: :justify
-      move_down 20
+    @test.discipline.questions.limit(5).each_with_index do |question, index|
+      question_type = question.question_type.name
+      if question_type == "Subjetiva"
+        text "#{index+1}. #{question.description}", size:14, align: :justify
+        #TODO check if has really 1 option correct
+        text "Resposta: ", style: :bold
+        text question.options.correct.first.to_s
+        move_down 20  
+      else
+        print_objective_answers(question, index)
+      end
     end
 
+  end
+
+  def print_objective_answers(question, index)
+    text "#{index+1}. #{question.description}", size:14, align: :justify
+    move_down 5
+    question.options.each do |option|
+      text "* #{option.to_s}"
+    end
   end
 
 end

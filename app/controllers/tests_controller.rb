@@ -38,7 +38,6 @@ class TestsController < ApplicationController
       flash[:danger] = "A disciplina #{@test.discipline.name} não possui questões"
       redirect_to tests_path
     else
-      @test.generate(discipline_questions) 
       @test.save
       flash[:success] = "Prova criada com sucesso!"
       redirect_to @test
