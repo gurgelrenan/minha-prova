@@ -16,9 +16,10 @@
         <td><%= teacher.user ? teacher.user.email : "Ainda não existe um email cadastrado" %></td>
         <td><%= teacher.course ? teacher.course.name : "Ainda não pertence a nenhum curso" %></td>
         <td nowrap>
-          <%= link_to "", teacher_path(teacher), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
-          <%= link_to "", edit_teacher_path(teacher), :class => "glyphicon glyphicon-edit", title: "Editar" %>
-          <%= link_to "", teacher_path(teacher), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover esse usuário?", :class => "glyphicon glyphicon-trash" %>
+
+          <%= link_to "", rails_admin.show_path(model_name: 'teacher', id: teacher.id), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", rails_admin.edit_path(model_name: 'teacher', id: teacher.id), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", teacher_path(teacher), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover esse professor?", :class => "glyphicon glyphicon-trash" %>
       </td>
       </tr>
     <% end %>
@@ -27,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Novo professor', rails_admin.new_path('teacher'), class: "btn btn-primary" %>
+<%= link_to 'Novo professor', rails_admin.new_path('teacher'), class: "btn btn-primary ico-plus" %>

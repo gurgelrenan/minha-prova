@@ -15,8 +15,8 @@
         <td><%= course.name %></td>
         <td><%= course.college.name if course.college %></td>
         <td nowrap>
-          <%= link_to "", course_path(course), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
-          <%= link_to "", edit_course_path(course), :class => "glyphicon glyphicon-edit", title: "Editar" %>
+          <%= link_to "", rails_admin.show_path(model_name: 'course', id: course.id), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
+          <%= link_to "", rails_admin.edit_path(model_name: 'course', id: course.id), :class => "glyphicon glyphicon-edit", title: "Editar" %>
           <%= link_to "", course_path(course), title: "Deletar", :method => :delete, :confirm => "Tem certeza que deseja remover esse curso?", :class => "glyphicon glyphicon-trash" %>
       </td>
       </tr>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'Novo Curso', new_course_path, class: "btn btn-primary" %>
+<%= link_to 'Novo Curso', new_course_path, class: "btn btn-primary ico-plus" %>
