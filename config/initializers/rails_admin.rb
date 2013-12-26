@@ -38,4 +38,13 @@ RailsAdmin.config do |config|
     end
     field :value 
   end
+
+  config.model 'User' do
+    list do
+      exclude_fields_if do
+        type == :datetime
+      end
+      exclude_fields :encrypted_password, :reset_password_token, :sign_in_count, :current_sign_in_ip, :last_sign_in_ip
+    end
+  end
 end

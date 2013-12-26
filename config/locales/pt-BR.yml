@@ -225,5 +225,46 @@ pt-BR:
         college: "Universidade"
         teachers: "Professores"
         disciplines: "Disciplinas"
+      discipline:
+        name: "Nome"
+        description: "Descrição"
+        college: "Universidade"
+        teacher: "Professor"
+        course: "Curso"
+        tests: "Provas"
+        questions: "Questões"
+      option:
+        question: "Questão"
+        text: "Texto"
+        correct: "Opção Correta?"
+      teacher: 
+        name: "Nome"
+        user: "Usuário"
+        course: "Curso"
+        colleges: "Universidades"
+        disciplines: "Disciplinas"
+        tests: "Provas"
+      test:
+        name: "Nome"
+        teacher: "Professor"
+        discipline: "Disciplina"
+        level: "Dificuldade"
+        questions: "Questões"
+      question:
+        description: "Descrição"
+        discipline: "Disciplina"
+        user: "Usuário"
+        question_type: "Typo da Questão"
+        options: "Opções"
+        tests: "Provas"
+      question_type:
+        name: "Nome"
+      college:
+        name: "Nome"
+        city: "Cidade"
+        state: "Estado"
       user:
         email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação de Senha"
+        name: "Nome de Usuário"
