@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @test.name %>
-</p>
-
-<%= link_to 'Edit', edit_test_path(@test) %> |
-<%= link_to 'Back', tests_path %>
+<div class="row">
+  <h3>Nome da Prova: <%= @test.name %></h3>
+  <div class="col-md-9 well center">
+    <p>Professor: <%= @test.teacher.name %></p> 
+    <p>Disciplina: <%= @test.discipline.name %></p> 
+    <p>Dificudade: <%= @test.level %></p>
+    <p>Número de Questões: <%= @test.questions.count %></p>
+  </div>
+</div>
+<%= link_to 'Visualizar Prova', test_path(@test, format: "pdf"), class: "btn btn-primary" %>
+<%= link_to 'Voltar', tests_path, class: "btn btn-primary" %>

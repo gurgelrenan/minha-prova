@@ -1,5 +1,5 @@
 <h1>Listando Provas</h1>
-<% if @current_user_tests.count.zero? %>
+<% if @current_user_tests.nil? %>
   <p>Você ainda não criou nenhum prova</p>
 <% else %>
   <div class="row">
@@ -10,6 +10,7 @@
           <th>Name</th>
           <th>Professor</th>
           <th>Disciplina</th>
+          <th>Dificuldade</th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -20,6 +21,7 @@
             <td><%= test.name %></td>
             <td><%= test.teacher.name %></td>
             <td><%= test.discipline.name %></td>
+            <td><%= test.level %></td>
             <td nowrap>
               <%= link_to '', test_path(test, format: "pdf"), :class => "glyphicon glyphicon-eye-open", title: "Visualizar" %>
               <%= link_to '', test, method: :delete, data: { confirm: 'Are you sure?' }, :class => "glyphicon glyphicon-trash" %>

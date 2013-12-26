@@ -254,7 +254,7 @@ pt-BR:
         description: "Descrição"
         discipline: "Disciplina"
         user: "Usuário"
-        question_type: "Typo da Questão"
+        question_type: "Tipo da Questão"
         options: "Opções"
         tests: "Provas"
       question_type:

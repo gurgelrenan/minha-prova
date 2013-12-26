@@ -6,9 +6,11 @@ class TestsController < ApplicationController
 
   def index
     if current_user.teacher.nil?
-      redirect_to teste_path, alert: "Seu usuário não está relacionado com nenhum professor."
+      flash["info"] = "Seu usuário não está relacionado com nenhum professor."
+    else
+      @current_user_tests = Test.for_user(current_user.teacher.id)
     end
-    @current_user_tests = Test.for_user(current_user.teacher.id)
+    
   end
 
   def show
