@@ -213,6 +213,7 @@ pt-BR:
       college: "Universidade"
       course: "Curso"
       discipline: "Disciplina"
+      level_question: "Dificuldade da Questão"
       option: "Opção"
       question: "Questão"
       question_type: "Tipo de Questão"
@@ -233,6 +234,8 @@ pt-BR:
         course: "Curso"
         tests: "Provas"
         questions: "Questões"
+      level_question:
+        value: "Valor"
       option:
         question: "Questão"
         text: "Texto"
@@ -256,6 +259,7 @@ pt-BR:
         user: "Usuário"
         question_type: "Tipo da Questão"
         options: "Opções"
+        level_questions: "Dificuldade da Questão"
         tests: "Provas"
       question_type:
         name: "Nome"
