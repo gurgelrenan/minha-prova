@@ -14,5 +14,5 @@ class LevelQuestion < ActiveRecord::Base
   belongs_to :question, inverse_of: :level_questions
   belongs_to :user
 
-  validates :value, :question_id, :user_id, presence: true
+  validates :value, :user_id, presence: true
 end
