@@ -24,5 +24,6 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
 	     :recoverable, :rememberable, :trackable, :validatable
 	has_one :teacher     
+  has_many :questions, inverse_of: :user
   validates :email, presence: true
 end

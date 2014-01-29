@@ -39,6 +39,19 @@ RailsAdmin.config do |config|
     field :value 
   end
 
+  config.model Question do
+    field :user_id, :hidden do
+      default_value do
+        bindings[:view]._current_user.id
+      end
+    end
+    field :description
+    field :discipline
+    field :question_type
+    field :options
+    field :level_questions
+  end
+
   config.model 'User' do
     list do
       exclude_fields_if do

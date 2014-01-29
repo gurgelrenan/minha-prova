@@ -14,7 +14,7 @@
 class Question < ActiveRecord::Base
 
   belongs_to :discipline
-  belongs_to :user
+  belongs_to :user, inverse_of: :questions
   belongs_to :question_type
   
 
