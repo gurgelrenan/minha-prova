@@ -35,4 +35,4 @@ production:
   database: minha-prova_production
   pool: 5
   username: root
-  password: password
+  password: bla
