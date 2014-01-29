@@ -4,10 +4,11 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string(255)
-#  teacher_id    :integer
 #  discipline_id :integer
 #  created_at    :datetime
 #  updated_at    :datetime
+#  level         :float
+#  user_id       :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

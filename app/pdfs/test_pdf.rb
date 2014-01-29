@@ -9,7 +9,7 @@ class TestPdf< Prawn::Document
     move_down 10
     text "Disciplina: #{@test.discipline.name}", size:14, style: :bold
     move_down 10
-    text "Professor: #{@test.teacher.name}", size:14
+    text "Criado por: #{@test.user.name}", size:14
 
     move_down 20
 

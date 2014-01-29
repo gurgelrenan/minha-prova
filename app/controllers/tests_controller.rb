@@ -5,12 +5,7 @@ class TestsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.teacher.nil?
-      flash["info"] = "Seu usuário não está relacionado com nenhum professor."
-    else
-      @current_user_tests = Test.for_user(current_user.teacher.id)
-    end
-    
+    @current_user_tests = Array(Test.for_user(current_user.id))
   end
 
   def show

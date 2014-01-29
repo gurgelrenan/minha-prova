@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131223214319) do
+ActiveRecord::Schema.define(version: 20140129023458) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -151,15 +151,14 @@ ActiveRecord::Schema.define(version: 20131223214319) do
 
   create_table "tests", force: true do |t|
     t.string   "name"
-    t.integer  "teacher_id"
     t.integer  "discipline_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "level"
+    t.integer  "user_id"
   end
 
   add_index "tests", ["discipline_id"], name: "index_tests_on_discipline_id", using: :btree
-  add_index "tests", ["teacher_id"], name: "index_tests_on_teacher_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
