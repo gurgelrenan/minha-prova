@@ -14,6 +14,8 @@ MinhaProva::Application.routes.draw do
 
   resources :questions
 
+  resources :level_questions
+
   root "home#index"
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

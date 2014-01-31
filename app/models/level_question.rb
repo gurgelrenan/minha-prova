@@ -15,4 +15,5 @@ class LevelQuestion < ActiveRecord::Base
   belongs_to :user
 
   validates :value, :user_id, presence: true
+  validates :value, numericality: true
 end

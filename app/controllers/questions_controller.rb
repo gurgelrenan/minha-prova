@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
 	def index
 		@q = Question.search(params[:q])
     @questions = @q.result(distinct: true)
+    @level_question = LevelQuestion.new
 	end
 
 	def show

@@ -45,7 +45,8 @@
 					<th><%= sort_link @q, :discipline_name, "Disciplina" %></th>
 					<th><%= sort_link @q, :user_name, "Autor" %></th>
 					<th><%= sort_link @q, :question_type_value, "Tipo" %></th>
-					<th>Dificuldade</th>
+					<th>Dificuldade Média</th>
+          <th>Minha avaliação</th>
 				</tr>
 			</thead>
 			<% @questions.each do |q| %>
@@ -55,7 +56,19 @@
 							<td><%= q.discipline.name %></td>
 							<td><%= q.user.name if !q.user.blank? %></td>
 							<td><%= q.question_type.name if !q.question_type.blank? %></td>
-							<td><%= q.average if q.level_questions.count > 0 %></td>
+							<td><span class="label label-<%= set_question_rate_color(q.average) %>"><%= q.average if q.level_questions.count > 0 %></span></td>
+              <td>
+                <% if user_evaluated_question?(q.id) %>
+                  <%= get_user_avaliation_for_question(q.id) %>
+                <% else %>
+                  <%= simple_form_for @level_question, remote: true do |f| %>
+                    <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+                    <%= f.input :question_id, as: :hidden, input_html: { value: q.id } %>
+                    <%= f.input :value, placeholder: "Valor", label: false %>
+                    <%= f.button :submit, "Avaliar", class: "btn btn-xs btn-primary" %>
+                  <% end %>
+                <% end %>
+              </td>
 					</tr>
 				</tbody>
 			<% end %>
