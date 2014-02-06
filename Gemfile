@@ -45,6 +45,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'annotate'
+  gem 'rvm-capistrano'
 end
 
 # Use ActiveModel has_secure_password
