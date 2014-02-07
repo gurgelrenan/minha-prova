@@ -24,7 +24,6 @@
     <menu class="menu">
       <ul class="container">
         <li><a href="/" class="<%= 'active' if params[:controller] == 'home' %> ico-home" role="menuitem">Home</a></li>
-        <li><%= link_to "Professores", teachers_path, role: "menu-item", class: params[:controller] == 'teachers' ? 'active' : '' %></li>
         <li><%= link_to "Questões", questions_path, role: "menu-item", class: params[:controller] == 'questions' ? 'active' : '' %></li>
         <li><%= link_to "Universidades", colleges_path, role: "menu-item", class: params[:controller] == 'colleges' ? 'active' : '' %></li>
         <li><%= link_to "Cursos", courses_path, role: "menu-item", class: params[:controller] == 'courses' ? 'active' : '' %></li>

@@ -18,7 +18,6 @@
         <td><%= discipline.name %></td>
         <td><%= discipline.description %></td>
         <td><%= discipline.college.name %></td>
-        <td><%= discipline.teacher.name %></td>
         <td><%= discipline.course.name %></td>
         <td nowrap>
           <%= link_to "", rails_admin.show_path(model_name: 'discipline', id: discipline.id), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>

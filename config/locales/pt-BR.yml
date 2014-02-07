@@ -229,8 +229,6 @@ pt-BR:
       discipline:
         name: "Nome"
         description: "Descrição"
-        college: "Universidade"
-        teacher: "Professor"
         course: "Curso"
         tests: "Provas"
         questions: "Questões"

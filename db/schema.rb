@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129023458) do
+ActiveRecord::Schema.define(version: 20140207011731) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -49,16 +49,12 @@ ActiveRecord::Schema.define(version: 20140129023458) do
   create_table "disciplines", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "college_id"
-    t.integer  "teacher_id"
     t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "disciplines", ["college_id"], name: "index_disciplines_on_college_id", using: :btree
   add_index "disciplines", ["course_id"], name: "index_disciplines_on_course_id", using: :btree
-  add_index "disciplines", ["teacher_id"], name: "index_disciplines_on_teacher_id", using: :btree
 
   create_table "level_questions", force: true do |t|
     t.integer  "value"

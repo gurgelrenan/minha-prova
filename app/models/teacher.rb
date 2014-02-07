@@ -14,7 +14,6 @@ class Teacher < ActiveRecord::Base
   belongs_to :user
   belongs_to :course
   has_and_belongs_to_many :colleges
-  has_many :disciplines
   has_many :tests
 
   validates :name, :user_id, :course_id, presence: true

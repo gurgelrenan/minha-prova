@@ -52,6 +52,12 @@ RailsAdmin.config do |config|
     field :level_questions
   end
 
+  config.model Discipline do
+    field :name
+    field :description
+    field :course
+  end
+
   config.model 'User' do
     list do
       exclude_fields_if do
