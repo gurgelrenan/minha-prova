@@ -16,4 +16,8 @@ class LevelQuestion < ActiveRecord::Base
 
   validates :value, :user_id, presence: true
   validates :value, numericality: true
+
+  def value_enum
+    [1,2,3,4,5]
+  end
 end

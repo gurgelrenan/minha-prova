@@ -65,7 +65,7 @@
                   <%= simple_form_for @level_question, remote: true do |f| %>
                     <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
                     <%= f.input :question_id, as: :hidden, input_html: { value: q.id } %>
-                    <%= f.input :value, placeholder: "Valor", label: false %>
+                    <%= f.select :value, options_for_select([1,2,3,4,5], f.object) %>
                     <%= f.button :submit, "Avaliar", class: "btn btn-xs btn-primary" %>
                   <% end %>
                 <% end %>
