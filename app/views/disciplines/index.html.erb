@@ -5,7 +5,6 @@
     <tr>
       <th>Nome</th>
       <th>Descrição</th>
-      <th>Universidade</th>
       <th>Professor</th>
       <th>Curso</th>
       <th>Ações</th>
@@ -17,7 +16,6 @@
       <tr>
         <td><%= discipline.name %></td>
         <td><%= discipline.description %></td>
-        <td><%= discipline.college.name %></td>
         <td><%= discipline.course.name %></td>
         <td nowrap>
           <%= link_to "", rails_admin.show_path(model_name: 'discipline', id: discipline.id), :class => "glyphicon glyphicon-eye-open", title: "Visualizar"  %>
@@ -31,4 +29,4 @@
 
 <br>
 
-<%= link_to 'Nova Disciplina', new_discipline_path, class: "btn btn-primary ico-plus" %>
+<%= link_to 'Nova Disciplina', rails_admin.new_path('discipline'), class: "btn btn-primary ico-plus" %>

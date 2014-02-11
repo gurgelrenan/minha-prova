@@ -13,7 +13,7 @@
 class Discipline < ActiveRecord::Base
   belongs_to :course
   has_many :tests
-  has_many :questions
-
+  has_and_belongs_to_many :questions
+  
   validates :name, presence: true
 end

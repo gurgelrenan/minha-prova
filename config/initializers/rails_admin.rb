@@ -46,8 +46,8 @@ RailsAdmin.config do |config|
       end
     end
     field :description
-    field :discipline
     field :question_type
+    field :disciplines
     field :options
     field :level_questions
   end
@@ -58,7 +58,7 @@ RailsAdmin.config do |config|
     field :course
   end
 
-  config.model 'User' do
+  config.model User do
     list do
       exclude_fields_if do
         type == :datetime

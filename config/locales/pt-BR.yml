@@ -253,7 +253,7 @@ pt-BR:
         questions: "Questões"
       question:
         description: "Descrição"
-        discipline: "Disciplina"
+        disciplines: "Disciplinas"
         user: "Usuário"
         question_type: "Tipo da Questão"
         options: "Opções"

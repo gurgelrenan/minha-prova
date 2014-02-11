@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140207011731) do
+ActiveRecord::Schema.define(version: 20140207014254) do
 
   create_table "answers", force: true do |t|
     t.integer  "question_id"
@@ -56,6 +56,11 @@ ActiveRecord::Schema.define(version: 20140207011731) do
 
   add_index "disciplines", ["course_id"], name: "index_disciplines_on_course_id", using: :btree
 
+  create_table "disciplines_questions", id: false, force: true do |t|
+    t.integer "discipline_id", null: false
+    t.integer "question_id",   null: false
+  end
+
   create_table "level_questions", force: true do |t|
     t.integer  "value"
     t.integer  "question_id"
@@ -85,14 +90,12 @@ ActiveRecord::Schema.define(version: 20140207011731) do
 
   create_table "questions", force: true do |t|
     t.text     "description"
-    t.integer  "discipline_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "question_type_id"
   end
 
-  add_index "questions", ["discipline_id"], name: "index_questions_on_discipline_id", using: :btree
   add_index "questions", ["question_type_id"], name: "index_questions_on_question_type_id", using: :btree
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 

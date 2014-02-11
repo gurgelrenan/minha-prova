@@ -4,7 +4,6 @@
 #
 #  id               :integer          not null, primary key
 #  description      :text
-#  discipline_id    :integer
 #  user_id          :integer
 #  created_at       :datetime
 #  updated_at       :datetime
@@ -13,7 +12,6 @@
 
 class Question < ActiveRecord::Base
 
-  belongs_to :discipline
   belongs_to :user, inverse_of: :questions
   belongs_to :question_type
   
@@ -21,6 +19,7 @@ class Question < ActiveRecord::Base
   has_many :options
   has_many :level_questions
   has_and_belongs_to_many :tests
+  has_and_belongs_to_many :disciplines
 
   accepts_nested_attributes_for :options,
     :reject_if => ->(a) { a[:text].blank? },
@@ -29,7 +28,7 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :level_questions    
 
   validates :description, presence: true, allow_blank: false
-  validates :discipline_id, :user_id, presence: true
+  validates :user_id, presence: true
 
   def correct_options
     options.correct
