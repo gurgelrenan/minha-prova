@@ -251,6 +251,7 @@ pt-BR:
         discipline: "Disciplina"
         level: "Dificuldade"
         questions: "Questões"
+        num_questions: "Número de questões"
       question:
         description: "Descrição"
         disciplines: "Disciplinas"

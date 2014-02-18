@@ -9,6 +9,7 @@
 #  updated_at    :datetime
 #  level         :float
 #  user_id       :integer
+#  num_questions :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

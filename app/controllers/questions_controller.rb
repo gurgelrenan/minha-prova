@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!
 	def index
 		@q = Question.search(params[:q])
-    @questions = @q.result(distinct: true)
+    @questions = @q.result(distinct: true).paginate(:page => params[:page])
     @level_question = LevelQuestion.new
 	end
 

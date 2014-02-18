@@ -75,5 +75,6 @@
 			<% end %>
 		</table>
 		<%= link_to "Criar questão", rails_admin.new_path('question'), class: "btn btn-primary ico-plus" %>
+    <%= will_paginate @questions %>
 	</div>
 </div>

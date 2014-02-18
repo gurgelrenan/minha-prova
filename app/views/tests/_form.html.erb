@@ -1,8 +1,13 @@
 <%= simple_form_for(@test) do |f| %>
   <%= f.input :name %>
-  <%= f.association :teacher, prompt: "Escolha um professor" %>
-  <%= f.association :discipline, prompt: "Escolha uma disciplina" %>
+  <%= f.association :discipline %>
   <%= f.input :level, collection: 1..5 %>
+  <%= f.input :num_questions %>
+  <%= f.input :user_id, input_html: { value: current_user.id }, as: :hidden %>
   
   <%= f.button :submit, class: "btn btn-primary", value: "Gerar prova" %>
 <% end %>
+
+
+
+

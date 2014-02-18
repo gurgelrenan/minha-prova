@@ -8,12 +8,10 @@ class TestPdf< Prawn::Document
     text "#{@test.name}", align: :center, size: 20, style: :bold
     move_down 10
     text "Disciplina: #{@test.discipline.name}", size:14, style: :bold
-    move_down 10
-    text "Criado por: #{@test.user.name}", size:14
 
     move_down 20
 
-    @test.discipline.questions.limit(5).each_with_index do |question, index|
+    @test.questions.each_with_index do |question, index|
       question_type = question.question_type.name
       if question_type == "Subjetiva"
         text "#{index+1}. #{question.description}", size:14, align: :justify

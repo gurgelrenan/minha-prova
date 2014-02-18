@@ -41,4 +41,10 @@ class Question < ActiveRecord::Base
   def average
     self.level_questions.average('value').to_f
   end
+
+  def self.from_level(level, limit)
+    int_level = level.to_int
+    questions = Question.select { |q| q.average.between?(int_level, int_level+1) }
+    questions.sample(limit)
+  end
 end

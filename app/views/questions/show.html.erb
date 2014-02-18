@@ -22,7 +22,7 @@
 				</span>
 				<span class="status-text">
 					Disciplinas:
-					<b><%= "colocar aqui" %></b>
+					<b><%= @question.disciplines.map(&:name).join(', ') %></b>
 				</span>
 				<span class="status-text">
 					Criado em:

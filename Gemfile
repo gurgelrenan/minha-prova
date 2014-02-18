@@ -13,6 +13,7 @@ gem 'rails_admin'
 gem 'ransack'
 gem 'prawn'
 gem "select2-rails"
+gem "will_paginate"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -46,6 +47,7 @@ group :development do
   gem 'awesome_print'
   gem 'annotate'
   gem 'rvm-capistrano'
+  gem 'faker'
 end
 
 # Use ActiveModel has_secure_password

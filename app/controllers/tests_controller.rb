@@ -35,9 +35,16 @@ class TestsController < ApplicationController
       flash[:danger] = "A disciplina #{@test.discipline.name} não possui questões"
       redirect_to tests_path
     else
-      @test.save
-      flash[:success] = "Prova criada com sucesso!"
-      redirect_to @test
+      questions = Question.from_level(@test.level, @test.num_questions)
+      if !questions.count.zero?
+        @test.save
+        @test.questions << questions  
+        flash[:success] = "Prova criada com sucesso!"
+        redirect_to @test
+      else
+        flash[:error] = "Não conseguimos achar questões para a sua dificuldade, tente outra."
+        render "new"
+      end
     end
   end
 
@@ -63,6 +70,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name, :level, :teacher_id, :discipline_id)
+      params.require(:test).permit(:name, :level, :discipline_id, :user_id, :num_questions)
     end
 end

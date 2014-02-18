@@ -9,6 +9,7 @@
 #  updated_at    :datetime
 #  level         :float
 #  user_id       :integer
+#  num_questions :integer
 #
 
 class Test < ActiveRecord::Base
@@ -19,5 +20,5 @@ class Test < ActiveRecord::Base
 
   scope :for_user, -> (id) { where(user_id: id) }
 
-  validates :name, :teacher_id, :discipline_id, presence: true
+  validates :discipline_id, :user_id, :level, presence: true
 end
