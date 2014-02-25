@@ -2,7 +2,7 @@ Minha Prova
 ===========
 
 Minha Prova é uma aplicação para servir como banco de questões para as 
-diversas disciplinas ministradas em cursos superiores.
+diversas disciplinas ministradas por professores em cursos superiores.
 
 Este é um guia geral para qualquer um que queira usar, como também, colaborar
 com melhorias e reportando bugs.
@@ -22,6 +22,14 @@ Para rodar o sistema localmente, basta rodar os seguintes passos:
 ###Banco de Dados
 No ambiente de desenvolvimento, usamos o *MySQL*. Certifique-se que você tem instalado em seu computador o *MySQL*, caso não tenha, consulte o [Site do MySQL]
 
+###Gem importantes
+Algumas gems foram usadas para facilitar o desenvolvimento da aplicação. As mais importantes são:
+
+* [Devise] para autenticação
+* [Simple Form] para facilitar a construção de formulários
+* [Rails Admin] para construção do backend da aplicação
+* [Capistrano] para deploy
+
 ## Contribuindo
 Seria incrivel ter mais pessoas envolvidas nesse projeto. Para contribuir basta
 seguir os passos abaixo:
@@ -33,4 +41,8 @@ seguir os passos abaixo:
 5. Crie um novo Pull Request
 
 
-[Site do MySQL]:http://dev.mysql.com/downloads/
+[Site do MySQL]:http://dev.mysql.com/downloads
+[Devise]:https://github.com/plataformatec/devise
+[Simple Form]:https://github.com/plataformatec/simple_form
+[Rails Admin]:https://github.com/sferik/rails_admin
+[Capistrano]:https://github.com/capistrano/capistrano
