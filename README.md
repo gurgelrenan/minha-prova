@@ -8,7 +8,7 @@ Este é um guia geral para qualquer um que queira usar, como também, colaborar
 com melhorias e reportando bugs.
 
 ###Versão do Ruby e Rails
-Esta aplicação foi feita usando Ruby 2.0 e Rails 4.0
+Esta aplicação foi feita usando [Ruby] 2.0 e [Rails] 4.0
 
 ###Configuração
 
@@ -22,7 +22,7 @@ Para rodar o sistema localmente, basta rodar os seguintes passos:
 ###Banco de Dados
 No ambiente de desenvolvimento, usamos o *MySQL*. Certifique-se que você tem instalado em seu computador o *MySQL*, caso não tenha, consulte o [Site do MySQL]
 
-###Gem importantes
+###Gems importantes
 Algumas gems foram usadas para facilitar o desenvolvimento da aplicação. As mais importantes são:
 
 * [Devise] para autenticação
@@ -46,3 +46,5 @@ seguir os passos abaixo:
 [Simple Form]:https://github.com/plataformatec/simple_form
 [Rails Admin]:https://github.com/sferik/rails_admin
 [Capistrano]:https://github.com/capistrano/capistrano
+[Ruby]:https://www.ruby-lang.org/en
+[Rails]:http://guides.rubyonrails.org/
