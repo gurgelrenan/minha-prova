@@ -47,4 +47,5 @@ class Question < ActiveRecord::Base
     questions = Question.select { |q| q.average.between?(int_level, int_level+1) }
     questions.sample(limit)
   end
+
 end
