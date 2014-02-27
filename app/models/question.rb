@@ -8,6 +8,7 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  question_type_id :integer
+#  average          :float
 #
 
 class Question < ActiveRecord::Base

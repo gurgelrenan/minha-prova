@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module QuestionsHelper
   def set_question_rate_color(question_rate)
     question_rate = Float(question_rate)
@@ -16,5 +18,9 @@ module QuestionsHelper
 
   def get_user_avaliation_for_question(question_id)
     LevelQuestion.where(user_id: current_user.id, question_id: question_id).first.try(:value).to_f
+  end
+
+  def show_options_for_average_select
+    [["Muito fácil", 1..2], ["Fácil", 2..3], ["Médio", 3..4], ["Dificil", 4..5], ["Muito dificil", 5..6]]
   end
 end
