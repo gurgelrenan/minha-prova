@@ -10,18 +10,22 @@
 			<h4>Pesquisa</h4>
 
   <div class="form-group">
-  	<%= f.label :description_cont, "Descrição" %>
+  	<%= f.label :description_cont, "Título" %>
   	<%= f.text_field :description_cont, class: "form-control" %>
   </div>
 	
 	<div class="form-group">
   	<%= f.label :user_name_eq, "Nome do criador" %>
-	  <%= f.select :user_name_eq, options_from_collection_for_select(User.all, :name, :name), class: "form-control" %>
+	  <%= f.collection_select :user_name_eq, User.order(:name), :name, :name, class: "form-control" %>
   </div>
   
   <div class="form-group">
   	<%= f.label :question_type_name_eq, "Tipo da questão" %>
-  	<%= f.select :question_type_name_eq, options_from_collection_for_select(QuestionType.all, :name, :name), class: "form-control" %>
+  	<%= f.collection_select :question_type_name_eq, QuestionType.order(:name), :name, :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :disciplines_id_eq, "Disciplina" %>
+    <%= f.collection_select :disciplines_id_eq, Discipline.order(:name), :id, :name, class: "form-control" %>
   </div>
 	<br />
 	<br />		  		  
@@ -75,6 +79,6 @@
 			<% end %>
 		</table>
 		<%= link_to "Criar questão", rails_admin.new_path('question'), class: "btn btn-primary ico-plus" %>
-    <%= will_paginate @questions %>
+    <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
 	</div>
 </div>
