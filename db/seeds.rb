@@ -23,7 +23,7 @@ icc = Discipline.create(name: "Iniciaçao da Ciência da Computação", descript
 QuestionType.create(name: "Subjetiva")
 QuestionType.create(name: "Objetiva")
 
-Question.create(description: "Quem foi a primeira programadora?", discipline_id: icc.id, user_id: user.id, question_type_id: 1)
+Question.create(description: "Quem foi a primeira programadora?", user_id: user.id, question_type_id: 1)
 
 
 
