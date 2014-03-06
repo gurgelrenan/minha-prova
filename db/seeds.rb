@@ -18,7 +18,7 @@ cc_ufc = Course.create(name: "Ciência da Computação", college_id: ufc.id)
 
 paulo = Teacher.create(name: "Paulo", user_id: user.id, course_id: cc_uece.id)
 
-icc = Discipline.create(name: "Iniciaçao da Ciência da Computação", description: "Uma descricão da disciplina de Ordenação", teacher_id: paulo.id, course_id: cc_uece.id)
+icc = Discipline.create(name: "Iniciaçao da Ciência da Computação", description: "Uma descricão da disciplina de Ordenação", course_id: cc_uece.id)
 
 QuestionType.create(name: "Subjetiva")
 QuestionType.create(name: "Objetiva")
