@@ -47,7 +47,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'awesome_print'
   gem 'annotate'
-  gem 'rvm-capistrano'
   gem 'faker'
 end
 
@@ -58,7 +57,9 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
-
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
 # Use debugger
 # gem 'debugger', group: [:development, :test]

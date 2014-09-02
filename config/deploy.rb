@@ -1,27 +1,18 @@
-require "rvm/capistrano"
-require 'bundler/capistrano'
+et :repo_url, 'git@github.com:gurgelrenan/minha-prova.git'
 
-set :user, "renan"
-set :application, "Minha Prova"
-set :repository,  "git@github.com:gurgelrenan/minha-prova.git"
-set :domain, "minhaprova.com.br"
+set :deploy_to, '/home/deploy/minha-prova'
 
-set :scm, :git
-set :use_sudo, false
+#set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-role :web, domain
-role :app, domain
-role :db, domain,:primary => true
-
-set :deploy_to, "/var/www/minhaprova.com.br"
-set :deploy_via, :remote_cache
-set :rails_env, 'production'
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
   end
-end
+
+  after :publishing, 'deploy:restart'
+  after :finishing, 'dep
