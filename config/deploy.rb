@@ -1,4 +1,4 @@
-et :repo_url, 'git@github.com:gurgelrenan/minha-prova.git'
+set :repo_url, 'git@github.com:gurgelrenan/minha-prova.git'
 
 set :deploy_to, '/home/deploy/minha-prova'
 
