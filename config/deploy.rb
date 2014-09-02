@@ -1,3 +1,4 @@
+set :application, 'minha-prova'
 set :repo_url, 'git@github.com:gurgelrenan/minha-prova.git'
 
 set :deploy_to, '/home/deploy/minha-prova'
@@ -15,4 +16,5 @@ namespace :deploy do
   end
 
   after :publishing, 'deploy:restart'
-  after :finishing, 'dep
+  after :finishing, 'deploy:cleanup'
+end
