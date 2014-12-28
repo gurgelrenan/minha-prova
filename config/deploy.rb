@@ -2,9 +2,9 @@ set :application, 'minha-prova'
 set :repo_url, 'git@github.com:gurgelrenan/minha-prova.git'
 
 set :deploy_to, '/home/deploy/minha-prova'
-
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 #set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+#set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 namespace :deploy do
 
